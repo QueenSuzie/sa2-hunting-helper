@@ -1,21 +1,12 @@
 import type { Accessor, Component } from 'solid-js';
-import PieceSets from '../data/PieceSets';
 import Sets from '../component/Sets';
-import PieceSet from '../data/PieceSet';
-
-const setsNG: PieceSets = new PieceSets();
-setsNG.addSet("shady place", new PieceSet("", "horn (P)"))
-	.addPieces("", "something bad (GT)");
-
-setsNG.addSet("three brothers' tombstone", new PieceSet("", "horn (C)"))
-	.addPieces("", "something bad (GT)");
-
-const setsNGP: PieceSets = new PieceSets();
+import sets_ng from '../data/stages/PumpkinHillNG';
+import sets_ngp from '../data/stages/PumpkinHill';
 
 const PumpkinHill: Component<{search: Accessor<string>, ng: boolean, dark: Accessor<boolean>}> = (props) => {
 	return (
 		<div class="pumpkin-hill-sets">
-			<Sets search={props.search} sets={(props.ng ? setsNG : setsNGP)} dark={props.dark} />
+			<Sets search={props.search} sets={(props.ng ? sets_ng : sets_ngp)} dark={props.dark} />
 		</div>
 	);
 };

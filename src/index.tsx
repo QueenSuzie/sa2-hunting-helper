@@ -2,6 +2,7 @@
 import { render } from 'solid-js/web';
 import { Route, Router } from "@solidjs/router";
 import { createEffect, createSignal, on } from 'solid-js';
+import constants from './data/Constants';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/app.css';
@@ -38,7 +39,7 @@ createEffect(on(dark, () => {
 }));
 
 render(() => (
-	<Router root={props => <App search={search} setSearch={setSearch} dark={dark} setDark={setDark}>{props.children}</App>}>
+	<Router base={constants.BASE_URL} root={props => <App search={search} setSearch={setSearch} dark={dark} setDark={setDark}>{props.children}</App>}>
 		<Route path="/" component={Home} />
 		<Route path="/ph" component={() => <PumpkinHill search={search} ng={true} dark={dark} />} />
 		<Route path="/php" component={() => <PumpkinHill search={search} ng={false} dark={dark} />} />

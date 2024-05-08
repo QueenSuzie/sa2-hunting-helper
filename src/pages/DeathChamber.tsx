@@ -1,14 +1,11 @@
 import type { Accessor, Component } from 'solid-js';
-import PieceSets from '../data/PieceSets';
-import PieceSet from '../data/PieceSet';
 import Sets from '../component/Sets';
-
-const sets: PieceSets = new PieceSets();
+import sets_dc from '../data/stages/DeathChamber';
 
 const DeathChamber: Component<{search: Accessor<string>, dark: Accessor<boolean>}> = (props) => {
 	return (
-		<div class="pumpkin-hill-sets">
-			<Sets search={props.search} sets={sets} dark={props.dark} />
+		<div class="death-chamber-sets">
+			<Sets search={props.search} sets={sets_dc} dark={props.dark} />
 		</div>
 	);
 };

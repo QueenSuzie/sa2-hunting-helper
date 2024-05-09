@@ -3,7 +3,7 @@ import PieceSets from "../PieceSets";
 
 const sets: PieceSets = new PieceSets();
 sets.addSet("a container within a container", new PieceSet("in front of a big door", "moving smoothly"))
-	.addPieces("the first stage", "a glimpse of the meteorite")
+	.addPieces("the first stage", "a glimpse of the meteorite | *HINT*")
 	.addPieces("twin stars", "a glimps of the meteorite")
 	.addPieces("twin stars", "watching moon (Top | Bot Low)")
 	.addPieces("on a steel drilling tower", "at the top of the tip of the ark")
@@ -21,7 +21,7 @@ sets.addSet("a fast rotating meteorite (Left)", new PieceSet("behind something p
 sets.addSet("a fast rotating meteorite (Right)", new PieceSet("in front of a big door", "behind a star | jump from the star! (Far)"))
 	.addPieces("the first stage", "watching moon (Top | Bot High)")
 	.addPieces("twin stars", "watching moon (Top | Bot Low)")
-	.addPieces("twin stars", "center square shadow")
+	.addPieces("twin stars", "center square shadow | *HINT*")
 	.addPieces("a star between three arches", "watching moon (Top) | watching stars (Top)")
 	.addPieces("a star between three arches", "square shadow")
 	.addPieces("on a steel drilling tower (Gray)", "watching moon (Bot High)")
@@ -47,7 +47,7 @@ sets.addSet("next to a rocket pointed at ark", new PieceSet("behind something po
 	.addPieces("behind something powerful", "jump (Mid | Close) | powerless by itself")
 	.addPieces("in front of a big door", "watching stars (Mid) | powerless by itself")
 	.addPieces("the first stage", "surrounded by spinner containers")
-	.addPieces("twin stars", "circle a rotating beacon | between the beacons | jump! (Mid)")
+	.addPieces("twin stars", "circle a rotating beacon | between the beacons | jump! (Mid) | *HINT*")
 	.addPieces("gun's machine", "circe the rotating beacon");
 
 sets.addSet("drilling tower", new PieceSet("on a steel drilling tower (Gray)", "a glimpse of the meteorite"))
@@ -92,7 +92,7 @@ sets.addSet("above a blue moon tank (under)", new PieceSet("behind something pow
 	.addPieces("on a steel drilling tower (Yellow)", "watching moon (Top) | jump from the star (Far)")
 	.addPieces("on a steel drilling tower (Yellow)", "watching stars (Bot)");
 
-sets.addSet("between floating containers (AC)", new PieceSet("in front of a big door", "jump from the star (Mid | Close)"))
+sets.addSet("between floating containers (AC)", new PieceSet("in front of a big door", "jump from the star (Mid | Close) | *HINT*"))
 	.addPieces("the first stage", "moving storage | powerless by itself")
 	.addPieces("twin stars", "floating around the moon (50/50)")
 	.addPieces("a star between three arches", "floating around the moon")
@@ -138,7 +138,7 @@ sets.addSet("the ark's huge storage area (Close Container)", new PieceSet("two a
 	.addPieces("the first stage", "watching moon (Top) | meteorite that flies")
 	.addPieces("twin stars", "container at the top of the ark")
 	.addPieces("twin stars", "circle a rotating beacon | jump from the star (Mid | Far)")
-	.addPieces("a star between three arches", "circle a rotating beacon | watching moon (Mid)")
+	.addPieces("a star between three arches", "circle a rotating beacon | watching moon (Mid) | *HINT*")
 	.addPieces("on a steel drilling tower (Gray)", "moving smoothly | jump from the star (Close)")
 	.addPieces("gun's machine", "jump from the star (Close) | powerless by itself");
 
@@ -154,7 +154,7 @@ sets.addSet("the ark's huge storage area (Close Platform)", new PieceSet("two st
 sets.addSet("the ark's huge storage area (Far Container)", new PieceSet("two stars and one moon", "watching stars (Bot) | watching moon (Bot | Low)"))
 	.addPieces("in front of a big door", "between the beacon | jump from the star (Far)")
 	.addPieces("in front of a big door", "watching moon (Mid) | powerless by itself")
-	.addPieces("the first stage", "jump from the star (Far)")
+	.addPieces("the first stage", "jump from the star (Far) | *HINT*")
 	.addPieces("twin stars", "moving smoothly | behind a star")
 	.addPieces("twin stars", "container at the top of the ark")
 	.addPieces("on top of the steel drilling tower", "jump from the star (Far)")
@@ -178,7 +178,7 @@ sets.addSet("dangerous liquid (Mid)", new PieceSet("behind something powerful", 
 	.addPieces("in front of a big door", "glimpse | jump from the star (Close)")
 	.addPieces("the first stage", "jump from the star (Far 50/50)")
 	.addPieces("twin stars", "moving storage | circle the rotating beacon")
-	.addPieces("twin stars", "jump from the star (Mid)")
+	.addPieces("twin stars", "jump from the star (Mid) | *HINT*")
 	.addPieces("on top of the steel drilling tower (Gray)", "between the beacons | jump from the star (Mid)")
 	.addPieces("on top of the steel drilling tower (Yellow)", "circle a rotating beacon | powerless by itself")
 	.addPieces("black boxes", "powerless by itself")
@@ -192,14 +192,14 @@ sets.addSet("dangerous liquid (Top)", new PieceSet("evil water drops", "moving s
 	.addPieces("the first stage", "floating around the moon")
 	.addPieces("in front of a big door", "moving storage | circle the rotating beacon")
 	.addPieces("in front of a big door", "between the beacons | watching stars (Mid)")
-	.addPieces("twin stars", "watching stars (Top) | a mini-steel beam")
+	.addPieces("twin stars", "watching stars (Top) | a mini-steel beam | *HINT*")
 	.addPieces("on top of the steel drilling tower (Gray)", "floating around the moon | powerless by itself")
 	.addPieces("on top of the steel drilling tower (Yello)", "jump from the star (Close)");
 
 sets.addSet("inside a container which is behind a container", new PieceSet("behind something powerful", "behind a star"))
 	.addPieces("behind something powerful", "jump from the star (Far) | watching moon (Bot High)")
 	.addPieces("in front of a big door", "watching stars (Top) | jump from the star (Mid)")
-	.addPieces("the first stage", "jump from the star (Close) | powerless by itself")
+	.addPieces("the first stage", "jump from the star (Close) | powerless by itself | *HINT*")
 	.addPieces("twin stars", "moving smoothly | jump from the star (Mid)")
 	.addPieces("twin stars", "watching moon (Bot High | Low)")
 	.addPieces("a star between three arches", "jump from the moon (Far)")
@@ -208,7 +208,7 @@ sets.addSet("inside a container which is behind a container", new PieceSet("behi
 	.addPieces("black boxes", "center square shadow");
 
 sets.addSet("near a moon with a rotating beacon", new PieceSet("in front of a big door", "floating around the moon"))
-	.addPieces("in front of a big door", "jump from the star (Mid | Close)")
+	.addPieces("in front of a big door", "jump from the star (Mid | Close) | *HINT*")
 	.addPieces("the first stage", "circle a rotating beacon | middle of the rotating beacons")
 	.addPieces("twin stars", "cage | a mini-steel beam | powerless by itself")
 	.addPieces("a star between three arches", "cage | jump from the star (Mid) | the mini-steel beam")

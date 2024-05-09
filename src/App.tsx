@@ -22,7 +22,7 @@ const App: Component<{children?: any, search: Accessor<string>, setSearch: Sette
 							<Nav.Link href={`${constants.BASE_URL}/dc`} eventKey="dc">Death Chamber</Nav.Link>
 							<Nav.Link href={`${constants.BASE_URL}/mh`} eventKey="mh">Meteor Herd</Nav.Link>
 						</Nav>
-						<Form class="d-flex">
+						<Form class="d-flex" onSubmit={(e) => e.preventDefault()}>
 							<FormControl
 								value={props.search()}
 								onInput={e => props.setSearch(e.target.value)}
@@ -32,7 +32,7 @@ const App: Component<{children?: any, search: Accessor<string>, setSearch: Sette
 								aria-label="Filter"
 							/>
 						</Form>
-						<Form class="ms-3 d-flex">
+						<Form class="ms-3 d-flex" onSubmit={(e) => e.preventDefault()}>
 							<Form.Check
 								type="switch"
 								label="Dark Theme"

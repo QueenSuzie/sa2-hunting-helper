@@ -6,6 +6,7 @@ import Pieces from "../data/Pieces";
 
 const Sets: Component<{search: Accessor<string>, sets: PieceSets, dark: Accessor<boolean>}> = (props) => {
 	const upperWords = (word: string) => {
+		//return word.charAt(0).toUpperCase() + word.slice(1);
 		return word.replace(/(^([a-zA-Z\p{M}]))|([ -][a-zA-Z\p{M}])/g,
 			function(s){
 				return s.toUpperCase();

@@ -62,7 +62,7 @@ sets.addSet("hot molten lava below", new PieceSet("gun's machine", "circle a rot
 	.addPieces("gun's machine", "jump from the star! (Mid)")
 	.addPieces("black boxes", "watching stars (Top | Mid)");
 
-sets.addSet("tirangle star", new PieceSet("next to a rocket", "three tanks (check)"))
+sets.addSet("triangle star", new PieceSet("next to a rocket", "three tanks (check)"))
 	.addPieces("gun's machine", "watching moon (Top 50%)")
 	.addPieces("black boxes", "moving around storage");
 

@@ -69,7 +69,7 @@ sets.addSet("triangle star", new PieceSet("next to a rocket", "three tanks (chec
 const zero_point_five = new PieceSet("gun's machine", "moving around storage | watching stars (Bot)");
 sets.addSet("0.5", zero_point_five);
 sets.addSet("zero point five", zero_point_five)
-	.addPieces("black boxes", "moving around storage | watching moon (Bot High)")
+	.addPieces("black boxes", "watching stars (Top) | watching moon (Bot High)")
 	.addPieces("on a steel drilling tower", "watching moon (Top) | moving around one tank");
 
 sets.addSet("on something strong", new PieceSet("gun's machine", "behind a star"))
@@ -156,7 +156,7 @@ sets.addSet("the ark's huge storage area (Far Container)", new PieceSet("two sta
 	.addPieces("in front of a big door", "watching moon (Mid) | powerless by itself")
 	.addPieces("the first stage", "jump from the star (Far) | *HINT*")
 	.addPieces("twin stars", "moving smoothly | behind a star")
-	.addPieces("twin stars", "container at the top of the ark")
+	.addPieces("twin stars", "container at the top of the ark | middle of the rotating beacon")
 	.addPieces("on top of the steel drilling tower", "jump from the star (Far)")
 	.addPieces("gun's machine", "circle a rotating beacon | watching moon (Bot Low)")
 	.addPieces("gun's machine", "meteorite that flies");

@@ -1,10 +1,18 @@
-import { Container, Form, FormControl, Nav, Navbar } from 'solid-bootstrap';
+import { Container, Form, FormControl, Nav, NavDropdown, Navbar } from 'solid-bootstrap';
 
 import logo from './assets/emerald.webp';
 import { Accessor, Component, Setter } from 'solid-js';
 import constants from './data/Constants';
 
-const App: Component<{children?: any, search: Accessor<string>, setSearch: Setter<string>, dark: Accessor<boolean>, setDark: Setter<boolean>}> = (props) => {
+const App: Component<{
+	children?: any,
+	search: Accessor<string>,
+	setSearch: Setter<string>,
+	dark: Accessor<boolean>,
+	setDark: Setter<boolean>,
+	upperCaseAllWords: Accessor<boolean>,
+	setUpperCaseAllWords: Setter<boolean>
+}> = (props) => {
 	return (
 		<>
 			<Navbar bg={props.dark() ? "black" : "secondary-subtle"} variant={props.dark() ? "dark" : "light"} expand="lg">
@@ -32,14 +40,28 @@ const App: Component<{children?: any, search: Accessor<string>, setSearch: Sette
 								aria-label="Filter"
 							/>
 						</Form>
-						<Form class="ms-3 d-flex" onSubmit={(e) => e.preventDefault()}>
-							<Form.Check
-								type="switch"
-								label="Dark Theme"
-								checked={props.dark()}
-								onChange={() => props.setDark(!props.dark())}
-							/>
-						</Form>
+						<NavDropdown title="Settings" class="ms-3 navbar-settings" menuVariant={props.dark() ? "dark" : "light"} autoClose="outside">
+							<NavDropdown.Item as="div">
+								<Form onSubmit={(e) => e.preventDefault()}>
+									<Form.Check
+										type="switch"
+										label="Dark Theme"
+										checked={props.dark()}
+										onChange={() => props.setDark(!props.dark())}
+									/>
+								</Form>
+							</NavDropdown.Item>
+							<NavDropdown.Item as="div">
+								<Form onSubmit={(e) => e.preventDefault()}>
+									<Form.Check
+										type="switch"
+										label="Uppercase All Words"
+										checked={props.upperCaseAllWords()}
+										onChange={() => props.setUpperCaseAllWords(!props.upperCaseAllWords())}
+									/>
+								</Form>
+							</NavDropdown.Item>
+						</NavDropdown>
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>

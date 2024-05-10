@@ -2,9 +2,11 @@ import Pieces from "./Pieces";
 
 class PieceSet {
 	pieces: Pieces[];
+	code: string|null;
 
-	constructor(second: string, third: string) {
+	constructor(second: string, third: string, code: string|null = null) {
 		this.pieces = [{ second: second, third: third }];
+		this.code = code;
 	}
 
 	addPieces(second: string, third: string): this {

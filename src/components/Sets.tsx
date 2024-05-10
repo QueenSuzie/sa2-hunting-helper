@@ -3,19 +3,27 @@ import { Card, Col, Row } from "solid-bootstrap";
 import PieceSets from "../data/PieceSets";
 import PieceSet from "../data/PieceSet";
 import Pieces from "../data/Pieces";
+import Settings from "../data/Settings";
 
-const Sets: Component<{search: Accessor<string>, sets: PieceSets, dark: Accessor<boolean>}> = (props) => {
+const Sets: Component<{search: Accessor<string>, settings: Settings, sets: PieceSets}> = (props) => {
 	const upperWords = (word: string) => {
-		//return word.charAt(0).toUpperCase() + word.slice(1);
+		if (!props.settings.upperCaseAllWords()) {
+			return word.charAt(0).toUpperCase() + word.slice(1);
+		}
+
 		return word.replace(/(^([a-zA-Z\p{M}]))|([ -][a-zA-Z\p{M}])/g,
 			function(s){
 				return s.toUpperCase();
 			});
 	};
 
-	const includeSet = (term: string, value: string) => {
+	const includeSet = (term: string, value: string, code: string|null) => {
 		term = term.trim().toLowerCase();
 		if (term == "") {
+			return true;
+		}
+
+		if (code != null && term === code) {
 			return true;
 		}
 
@@ -39,10 +47,10 @@ const Sets: Component<{search: Accessor<string>, sets: PieceSets, dark: Accessor
 					}
 
 					return (
-						<Show when={includeSet(props.search(), key.toLowerCase())}>
+						<Show when={includeSet(props.search(), key.toLowerCase(), set.code)}>
 							<Col>
-								<Card border={props.dark() ? 'black' : undefined} class={props.dark() ? 'bg-card' : undefined} text={props.dark() ? "white" : "dark"}>
-									<Card.Header as="h5" class={`${props.dark() ? 'bg-black' : 'bg-light'} fw-bolder`}>{upperWords(key)}</Card.Header>
+								<Card border={props.settings.dark() ? 'black' : undefined} class={props.settings.dark() ? 'bg-card' : undefined} text={props.settings.dark() ? "white" : "dark"}>
+									<Card.Header as="h5" class={`${props.settings.dark() ? 'bg-black' : 'bg-light'} fw-bolder`}>{upperWords(key)}</Card.Header>
 									<Card.Body>
 										<For each={set.pieces}>
 											{(pieces: Pieces) => {

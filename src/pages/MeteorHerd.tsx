@@ -1,11 +1,12 @@
 import type { Accessor, Component } from 'solid-js';
-import Sets from '../component/Sets';
+import Sets from '../components/Sets';
 import sets_mh from '../data/stages/MeteorHerd';
+import Settings from '../data/Settings';
 
-const MeteorHerd: Component<{search: Accessor<string>, dark: Accessor<boolean>}> = (props) => {
+const MeteorHerd: Component<{search: Accessor<string>, settings: Settings}> = (props) => {
 	return (
 		<div class="meteor-herd-sets">
-			<Sets search={props.search} sets={sets_mh} dark={props.dark} />
+			<Sets search={props.search} settings={props.settings} sets={sets_mh} />
 		</div>
 	);
 };

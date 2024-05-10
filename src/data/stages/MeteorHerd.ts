@@ -10,6 +10,11 @@ sets.addSet("a container within a container", new PieceSet("in front of a big do
 	.addPieces("on a steel drilling tower", "a container at the top of the ark")
 	.addPieces("gun's machine", "center of a square shadow");
 
+sets.addSet("drilling tower", new PieceSet("on a steel drilling tower (Gray)", "a glimpse of the meteorite"))
+	.addPieces("black boxes", "a glimpse of the meteorite")
+	.addPieces("black boxes", "jump from the star! (Mid)")
+	.addPieces("black boxes", "powerless by itself");
+
 sets.addSet("a fast rotating meteorite (Left)", new PieceSet("behind something powerful", "at the top of the tip of the ark"))
 	.addPieces("in front of a big door", "three tanks | cage | moving smoothly")
 	.addPieces("twin stars", "glimpse | meteorite that flies | powerless")
@@ -49,11 +54,6 @@ sets.addSet("next to a rocket pointed at ark", new PieceSet("behind something po
 	.addPieces("the first stage", "surrounded by spinner containers")
 	.addPieces("twin stars", "circle a rotating beacon | between the beacons | jump! (Mid) | *HINT*")
 	.addPieces("gun's machine", "circe the rotating beacon");
-
-sets.addSet("drilling tower", new PieceSet("on a steel drilling tower (Gray)", "a glimpse of the meteorite"))
-	.addPieces("black boxes", "a glimpse of the meteorite")
-	.addPieces("black boxes", "jump from the star! (Mid)")
-	.addPieces("black boxes", "powerless by itself");
 
 sets.addSet("in a wooden box", new PieceSet("black boxes", "a glimpse of the meteorite"))
 sets.addSet("in front of a big door", new PieceSet("dig into a small meteorite", "center of a square shadow"));
@@ -107,7 +107,7 @@ sets.addSet("between floating containers (Under Box)", new PieceSet("behind some
 	.addPieces("on a steel drilling tower (Gray)", "next to the mini-steel beam")
 	.addPieces("on a steel drilling tower (Yellow)", "moving smoothly | moving storage");
 
-sets.addSet("in the floating containers", new PieceSet("behind something powerful", "floating around the moon | jump from a star (Mid)"))
+sets.addSet("in the floating containers", new PieceSet("behind something powerful", "floating around the moon | jump from a star (Mid)", "xx1"))
 	.addPieces("in front of a big door", "floating around the moon | jump from a star (Far)")
 	.addPieces("the first stage", "jump from a star (Far)")
 	.addPieces("twin stars", "circle a beacon | between the beacons")

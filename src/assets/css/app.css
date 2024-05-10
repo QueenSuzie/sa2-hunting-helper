@@ -2,11 +2,22 @@
 	background-color: #181b1e;
 }
 
-.piece-sets:not(:first-child) {
-	padding-top: 0.75rem !important;
+.piece-sets {
+	&:not(:first-child) {
+		padding-top: 0.75rem;
+	}
+
+	&:not(:last-child) {
+		padding-bottom: 0.75rem;
+		border-bottom: 1px solid black;
+	}
 }
 
-.piece-sets:not(:last-child) {
-	padding-bottom: 0.75rem !important;
-	border-bottom: 1px solid black;
+.navbar-settings {
+	.dropdown-item {
+		&:hover, &:focus {
+			color: var(--bs-dropdown-link-color);
+			background-color: transparent;
+		}
+	}
 }

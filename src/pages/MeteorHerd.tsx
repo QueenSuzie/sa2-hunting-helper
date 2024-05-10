@@ -1,7 +1,7 @@
 import type { Accessor, Component } from 'solid-js';
+import Settings from '../data/Settings';
 import Sets from '../components/Sets';
 import sets_mh from '../data/stages/MeteorHerd';
-import Settings from '../data/Settings';
 
 const MeteorHerd: Component<{search: Accessor<string>, settings: Settings}> = (props) => {
 	return (

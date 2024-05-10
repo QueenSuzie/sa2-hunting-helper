@@ -1,6 +1,10 @@
-type Pieces = {
-	second: string,
-	third: string
+type Piece = {
+	piece: string
 };
 
-export default Pieces;
+type Pieces = {
+	second: Piece,
+	third: Piece
+};
+
+export type { Pieces, Piece };

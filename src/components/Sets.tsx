@@ -1,8 +1,8 @@
 import { Accessor, Component, For, Show } from "solid-js";
 import { Card, Col, Row } from "solid-bootstrap";
-import PieceSets from "../data/PieceSets";
+import { Pieces } from "../data/Pieces";
 import PieceSet from "../data/PieceSet";
-import Pieces from "../data/Pieces";
+import PieceSets from "../data/PieceSets";
 import Settings from "../data/Settings";
 
 const Sets: Component<{search: Accessor<string>, settings: Settings, sets: PieceSets}> = (props) => {
@@ -56,8 +56,8 @@ const Sets: Component<{search: Accessor<string>, settings: Settings, sets: Piece
 											{(pieces: Pieces) => {
 												return (
 													<Row class="piece-sets fw-semibold">
-														<Col>{ pieces.second == '' ? 'ANYTHING' : upperWords(pieces.second)}</Col>
-														<Col>{ upperWords(pieces.third)}</Col>
+														<Col>{ upperWords(pieces.second.piece)}</Col>
+														<Col>{ upperWords(pieces.third.piece)}</Col>
 													</Row>
 												);
 											}}

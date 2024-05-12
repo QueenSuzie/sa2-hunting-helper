@@ -1,3 +1,4 @@
+import Code from "../Code";
 import PieceSet from "../PieceSet";
 import PieceSets from "../PieceSets";
 
@@ -107,7 +108,7 @@ sets.addSet("between floating containers (Under Box)", new PieceSet("behind some
 	.addPieces("on a steel drilling tower (Gray)", "next to the mini-steel beam")
 	.addPieces("on a steel drilling tower (Yellow)", "moving smoothly | moving storage");
 
-sets.addSet("in the floating containers", new PieceSet("behind something powerful", "floating around the moon | jump from a star (Mid)", "xx1"))
+sets.addSet("in the floating containers", new PieceSet("behind something powerful", "floating around the moon | jump from a star (Mid)"))
 	.addPieces("in front of a big door", "floating around the moon | jump from a star (Far)")
 	.addPieces("the first stage", "jump from a star (Far)")
 	.addPieces("twin stars", "circle a beacon | between the beacons")
@@ -130,7 +131,7 @@ sets.addSet("two huge containers", new PieceSet("behind something powerful", "su
 	.addPieces("on a steel drilling tower (Yellow)", "use a meteorite that flies")
 	.addPieces("gun's machine", "moving smoothly");
 
-sets.addSet("the ark's huge storage area (Close Container)", new PieceSet("two against one", "watching moon (Bot Low)"))
+sets.addSet("the ark's huge storage area (Close Container)", new PieceSet("two against one", "watching moon (Bot Low)", "a1"))
 	.addPieces("two stars and one moon", "watching moon (Bot Low) | watching stars (Bot)")
 	.addPieces("two stars and one moon", "powerless by itself")
 	.addPieces("in front of a big door", "moving smoothly | spinner containers")
@@ -142,7 +143,7 @@ sets.addSet("the ark's huge storage area (Close Container)", new PieceSet("two a
 	.addPieces("on a steel drilling tower (Gray)", "moving smoothly | jump from the star (Close)")
 	.addPieces("gun's machine", "jump from the star (Close) | powerless by itself");
 
-sets.addSet("the ark's huge storage area (Close Platform)", new PieceSet("two stars and one moon", "watching moon (Bot Low)"))
+sets.addSet("the ark's huge storage area (Close Platform)", new PieceSet("two stars and one moon", "watching moon (Bot Low)", "a2"))
 	.addPieces("behind something powerful", "watching moon (Mid)")
 	.addPieces("in front of a big door", "behind a star | container at the top")
 	.addPieces("in front of a big door", "middle of the rotating beacon")
@@ -151,7 +152,7 @@ sets.addSet("the ark's huge storage area (Close Platform)", new PieceSet("two st
 	.addPieces("gun's machine", "moving smoothly (1/3)")
 	.addPieces("black boxes", "behind a star");
 
-sets.addSet("the ark's huge storage area (Far Container)", new PieceSet("two stars and one moon", "watching stars (Bot) | watching moon (Bot | Low)"))
+sets.addSet("the ark's huge storage area (Far Container)", new PieceSet("two stars and one moon", "watching stars (Bot) | watching moon (Bot | Low)", "a3"))
 	.addPieces("in front of a big door", "between the beacon | jump from the star (Far)")
 	.addPieces("in front of a big door", "watching moon (Mid) | powerless by itself")
 	.addPieces("the first stage", "jump from the star (Far) | *HINT*")
@@ -161,7 +162,7 @@ sets.addSet("the ark's huge storage area (Far Container)", new PieceSet("two sta
 	.addPieces("gun's machine", "circle a rotating beacon | watching moon (Bot Low)")
 	.addPieces("gun's machine", "meteorite that flies");
 
-sets.addSet("the ark's huge storage area (Far Platform)", new PieceSet("behind something powerful", "jump from the star (Mid)"))
+sets.addSet("the ark's huge storage area (Far Platform)", new PieceSet("behind something powerful", "jump from the star (Mid)", "a4"))
 	.addPieces("the first stage", "watching moon (Top) | glimpse")
 	.addPieces("the first stage", "jump from the star (Far)")
 	.addPieces("twin stars", "a glimpse of the meteorite")
@@ -229,4 +230,12 @@ sets.addSet("on a rotating beacon above a blue moon", new PieceSet("behind somet
 	.addPieces("gun's machine", "behind a star")
 	.addPieces("gun's machine", "jump from the star (Close) | powerless by itself");
 
-export default sets;
+const codes: Code[] = [];
+for (const key of sets.keys()) {
+	const set = sets.get(key);
+	if (set?.code) {
+		codes.push({ piece: key, code: set.code });
+	}
+}
+
+export { sets, codes };

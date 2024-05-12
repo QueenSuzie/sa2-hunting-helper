@@ -1,4 +1,4 @@
-import { Accessor, Component, For, Show } from "solid-js";
+import { Accessor, Component, For, JSX, Show } from "solid-js";
 import { Card, Col, Row } from "solid-bootstrap";
 import { Pieces } from "../data/Pieces";
 import PieceSet from "../data/PieceSet";
@@ -17,16 +17,7 @@ const Sets: Component<{search: Accessor<string>, settings: Settings, sets: Piece
 			});
 	};
 
-	const includeSet = (term: string, value: string, code: string|null) => {
-		term = term.trim().toLowerCase();
-		if (term == "") {
-			return true;
-		}
-
-		if (code != null && term === code) {
-			return true;
-		}
-
+	const includeSetOld = (term: string, value: string) => {
 		const words: string[] = term.split(" ");
 		for (const word of words) {
 			if (!value.includes(word)) {
@@ -35,6 +26,41 @@ const Sets: Component<{search: Accessor<string>, settings: Settings, sets: Piece
 		}
 
 		return true;
+	};
+
+	const includeSet = (term: string, value: string, code: string|null) => {
+		term = term.trim().toLowerCase();
+		if (term == "") {
+			return true;
+		}
+
+		console.log(code);
+		if (code != null && term === code) {
+			return true;
+		}
+
+		if (props.settings.useOldSearch()) {
+			return includeSetOld(term, value);
+		}
+
+		const piece_words: string[] = value.split(" ");
+		const search_words: string[] = term.split(" ");
+		for (let piece_word of piece_words) {
+			piece_word = piece_word.replace("(", "").replace(")", "");
+			for (const [search_pos, search] of search_words.entries()) {
+				const search: string = search_words[search_pos];
+				if (piece_word.startsWith(search)) {
+					search_words.splice(search_pos, 1);
+					break;
+				}
+			}
+
+			if (search_words.length === 0) {
+				return true;
+			}
+		}
+
+		return search_words.length === 0;
 	};
 
 	return (
@@ -56,8 +82,8 @@ const Sets: Component<{search: Accessor<string>, settings: Settings, sets: Piece
 											{(pieces: Pieces) => {
 												return (
 													<Row class="piece-sets fw-semibold">
-														<Col>{ upperWords(pieces.second.piece)}</Col>
-														<Col>{ upperWords(pieces.third.piece)}</Col>
+														<Col style={(pieces.second as JSX.CSSProperties)}>{ upperWords(pieces.second.piece)}</Col>
+														<Col style={(pieces.third as JSX.CSSProperties)}>{ upperWords(pieces.third.piece)}</Col>
 													</Row>
 												);
 											}}

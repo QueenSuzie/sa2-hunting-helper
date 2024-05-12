@@ -13,6 +13,25 @@
 	}
 }
 
+.navbar-codes {
+	@media all and (min-width: 992px) {
+		position: static;
+		.dropdown-menu {
+			left: 54.5%;
+			width: 100%;
+			margin-top: 0;
+			max-width: 400px;
+		}
+	}
+
+	.dropdown-item {
+		&:hover, &:focus {
+			color: var(--bs-dropdown-link-color);
+			background-color: transparent;
+		}
+	}
+}
+
 .navbar-settings {
 	.dropdown-item {
 		&:hover, &:focus {

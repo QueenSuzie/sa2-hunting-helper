@@ -23,5 +23,5 @@ export default defineConfig({
 	build: {
 		target: 'esnext',
 	},
-	base: '/sa2-hunting-buddy/',
+	base: '/sa2-hunting-buddy',
 });

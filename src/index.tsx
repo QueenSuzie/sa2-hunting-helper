@@ -19,6 +19,7 @@ const root = document.getElementById('app');
 const [search, setSearch] = createSignal('');
 const [dark, setDark] = makePersisted(createSignal(false), { name: "dark-mode" });
 const [upperCaseAllWords, setUpperCaseAllWords] = makePersisted(createSignal(true), { name: "uc-words" });
+const [useOldSearch, setUseOldSearch] = makePersisted(createSignal(false), { name: "old-search" });
 
 if (root != null && root.parentElement != null) {
 	root.parentElement.classList.add(dark() ? "text-bg-dark" : "text-bg-light");
@@ -43,6 +44,8 @@ const setApp = (props: RouteSectionProps<unknown>) => {
 			setDark={setDark}
 			upperCaseAllWords={upperCaseAllWords}
 			setUpperCaseAllWords={setUpperCaseAllWords}
+			useOldSearch={useOldSearch}
+			setUseOldSearch={setUseOldSearch}
 		>
 			{props.children}
 		</App>
@@ -51,7 +54,8 @@ const setApp = (props: RouteSectionProps<unknown>) => {
 
 const settings: Settings = {
 	dark: dark,
-	upperCaseAllWords: upperCaseAllWords
+	upperCaseAllWords: upperCaseAllWords,
+	useOldSearch: useOldSearch
 };
 
 render(() => (

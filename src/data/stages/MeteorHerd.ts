@@ -49,7 +49,7 @@ sets.addSet("shortcut rocket (Right)", new PieceSet("next to a rocket aimed at a
 	.addPieces("gun's machine", "jump from the star! (Close)")
 	.addPieces("black boxes", "glimpse of the meteorite");
 
-sets.addSet("next to a rocket pointed at ark", new PieceSet("behind something powerful", "container at top"))
+sets.addSet("next to a rocket pointed at ark", new PieceSet("behind something powerful", "container at top | moving storage"))
 	.addPieces("behind something powerful", "jump (Mid | Close) | powerless by itself")
 	.addPieces("in front of a big door", "watching stars (Mid) | powerless by itself")
 	.addPieces("the first stage", "surrounded by spinner containers")

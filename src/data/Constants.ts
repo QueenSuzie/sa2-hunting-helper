@@ -1,5 +1,5 @@
 const constants = {
-	BASE_URL: "/sa2-hunting-buddy"
+	BASE_URL: "/sa2-hunting-helper"
 };
 
 export default constants;

@@ -103,7 +103,7 @@ sets.addSet("between floating containers (AC)", new PieceSet("in front of a big 
 sets.addSet("between floating containers (Under Box)", new PieceSet("behind something powerful", "watching stars (Top) | jump from a star (Far)"))
 	.addPieces("behind something powerful", "center square shadow")
 	.addPieces("the first stage", "between the beacons | meteorite that flies")
-	.addPieces("in front of a big door", "moving smoothly | jump from a star (All)")
+	.addPieces("in front of a big door", "moving smoothly | jump from a star (Close | Far) | middle beacons")
 	.addPieces("on a steel drilling tower (Gray)", "next to the mini-steel beam")
 	.addPieces("on a steel drilling tower (Yellow)", "moving smoothly | moving storage");
 
@@ -111,7 +111,7 @@ sets.addSet("in the floating containers", new PieceSet("behind something powerfu
 	.addPieces("in front of a big door", "floating around the moon | jump from a star (Far)")
 	.addPieces("the first stage", "jump from a star (Far)")
 	.addPieces("twin stars", "circle a beacon | between the beacons")
-	.addPieces("twin stars", "jump from a star (Close | Mid)")
+	.addPieces("twin stars", "jump from a star (Close) | middle beacons")
 	.addPieces("a star between three arches", "floating around the moon | between the beacon")
 	.addPieces("a star between three arches", "watching stars (Mid)")
 	.addPieces("gun's machine", "moving storage | between the beacon")
@@ -207,7 +207,7 @@ sets.addSet("inside a container which is behind a container", new PieceSet("behi
 	.addPieces("on top of the steel drilling tower (Yellow)", "moving smoothly")
 	.addPieces("black boxes", "center square shadow");
 
-sets.addSet("near a moon with a rotating beacon", new PieceSet("in front of a big door", "floating around the moon"))
+sets.addSet("near a moon with a rotating beacon", new PieceSet("in front of a big door", "floating around the moon | between the beacons"))
 	.addPieces("in front of a big door", "jump from the star (Mid | Close) | *HINT*")
 	.addPieces("the first stage", "circle a rotating beacon | middle of the rotating beacons")
 	.addPieces("twin stars", "cage | a mini-steel beam | powerless by itself")

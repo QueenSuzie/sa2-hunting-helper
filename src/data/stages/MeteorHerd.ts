@@ -145,7 +145,7 @@ sets.addSet("on something strong", new PieceSet("gun's machine", "behind a star"
 	.addPieces("under a star", "next to the mini-steel beam");
 
 sets.addSet("above a blue moon in front of a tank (Confirms)", new PieceSet("floating stone", "wandering second third"))
-sets.addSet("above a blue moon in front of a tank (on moon)", new PieceSet("the first stage", "three tanks"))
+sets.addSet("above a blue moon in front of a tank (On Moon)", new PieceSet("the first stage", "three tanks"))
 	.addPieces("in front of a big door", "three tanks | behind a star")
 	.addPieces("in front of a big door", "watching moon (Bot Low)")
 	.addPieces("on a steel drilling tower (Gray)", "watching moon (Bot High)")
@@ -154,7 +154,7 @@ sets.addSet("above a blue moon in front of a tank (on moon)", new PieceSet("the 
 	.addPieces("floating stone", "watching moon (Top) | wandering second third")
 	.addPieces("under a star", "watching moon (Bot Low)");
 
-sets.addSet("above a blue moon in front of a tank (under)", new PieceSet("dangerous water drops", "three tanks"))
+sets.addSet("above a blue moon in front of a tank (Under)", new PieceSet("dangerous water drops", "three tanks"))
 	.addPieces("behind something powerful", "top of the tip of the ark | cage")
 	.addPieces("in front of a big door", "watching moon (Top) | powerless by itself")
 	.addPieces("twin stars", "watching moon (Top) | cage")

@@ -6,7 +6,7 @@ type Piece = {
 
 type Pieces = {
 	second: Piece,
-	third: Piece
+	third: Piece[]
 };
 
 export type { Pieces, Piece };

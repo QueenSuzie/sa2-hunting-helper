@@ -18,7 +18,9 @@ const App: Component<{
 	upperCaseAllWords: Accessor<boolean>,
 	setUpperCaseAllWords: Setter<boolean>,
 	useOldSearch: Accessor<boolean>,
-	setUseOldSearch: Setter<boolean>
+	setUseOldSearch: Setter<boolean>,
+	splitBigSets: Accessor<boolean>,
+	setSplitBigSets: Setter<boolean>
 }> = (props) => {
 	const locationIs = (page: string) => {
 		const location: Location<unknown> = useLocation();
@@ -124,6 +126,16 @@ const App: Component<{
 										label="Use Old Search Method"
 										checked={props.useOldSearch()}
 										onChange={() => props.setUseOldSearch(!props.useOldSearch())}
+									/>
+								</Form>
+							</NavDropdown.Item>
+							<NavDropdown.Item as="div">
+								<Form onSubmit={(e) => e.preventDefault()}>
+									<Form.Check
+										type="switch"
+										label="Split Up Big Sets"
+										checked={props.splitBigSets()}
+										onChange={() => props.setSplitBigSets(!props.splitBigSets())}
 									/>
 								</Form>
 							</NavDropdown.Item>

@@ -20,6 +20,7 @@ const [search, setSearch] = createSignal('');
 const [dark, setDark] = makePersisted(createSignal(false), { name: "dark-mode" });
 const [upperCaseAllWords, setUpperCaseAllWords] = makePersisted(createSignal(true), { name: "uc-words" });
 const [useOldSearch, setUseOldSearch] = makePersisted(createSignal(false), { name: "old-search" });
+const [splitBigSets, setSplitBigSets] = makePersisted(createSignal(true), { name: "split-sets" });
 
 if (root != null && root.parentElement != null) {
 	root.parentElement.classList.add(dark() ? "text-bg-dark" : "text-bg-light");
@@ -46,6 +47,8 @@ const setApp = (props: RouteSectionProps<unknown>) => {
 			setUpperCaseAllWords={setUpperCaseAllWords}
 			useOldSearch={useOldSearch}
 			setUseOldSearch={setUseOldSearch}
+			splitBigSets={splitBigSets}
+			setSplitBigSets={setSplitBigSets}
 		>
 			{props.children}
 		</App>
@@ -55,7 +58,8 @@ const setApp = (props: RouteSectionProps<unknown>) => {
 const settings: Settings = {
 	dark: dark,
 	upperCaseAllWords: upperCaseAllWords,
-	useOldSearch: useOldSearch
+	useOldSearch: useOldSearch,
+	splitBigSets: splitBigSets
 };
 
 render(() => (

@@ -4,6 +4,8 @@ import { Pieces } from "../data/Pieces";
 import PieceSet from "../data/PieceSet";
 import PieceSets from "../data/PieceSets";
 import Settings from "../data/Settings";
+import ThirdPieces from "./ThirdPieces";
+import SplitPieces from "./SplitPieces";
 
 const Sets: Component<{search: Accessor<string>, settings: Settings, sets: PieceSets}> = (props) => {
 	const upperWords = (word: string) => {
@@ -81,10 +83,17 @@ const Sets: Component<{search: Accessor<string>, settings: Settings, sets: Piece
 										<For each={set.pieces}>
 											{(pieces: Pieces) => {
 												return (
-													<Row class="piece-sets fw-semibold">
-														<Col style={(pieces.second as JSX.CSSProperties)}>{ upperWords(pieces.second.piece)}</Col>
-														<Col style={(pieces.third as JSX.CSSProperties)}>{ upperWords(pieces.third.piece)}</Col>
-													</Row>
+													<>
+														<Show when={props.settings.splitBigSets()}>
+															<SplitPieces pieces={pieces} settings={props.settings} formatWords={upperWords} />
+														</Show>
+														<Show when={!props.settings.splitBigSets()}>
+															<Row class="piece-sets fw-semibold">
+																<Col style={(pieces.second as JSX.CSSProperties)}>{ upperWords(pieces.second.piece)}</Col>
+																<ThirdPieces settings={props.settings} pieces={pieces.third} formatWords={upperWords} />
+															</Row>
+														</Show>
+													</>
 												);
 											}}
 										</For>

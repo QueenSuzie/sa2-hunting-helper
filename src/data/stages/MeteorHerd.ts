@@ -354,6 +354,11 @@ sets.addSet("on a rotating beacon above a blue moon", new PieceSet("behind somet
 	.addPieces("between the moon and stars", "three tanks | middle beacons")
 	.addPieces("dangerous water drops", "cage");
 
+sets.addSet("a container that doesn't float", new PieceSet("twin stars | the first stage", "floating in front of three tanks"))
+	.addPieces("dangerous liquid (Top)", "watching moon (Mid) | powerless by itself")
+	.addPieces("dangerous water drops", "surrounded by spinner containers")
+	.addPieces("two against one", "meteorite that flies");
+
 const codes: Code[] = [];
 for (const key of sets.keys()) {
 	const set = sets.get(key);

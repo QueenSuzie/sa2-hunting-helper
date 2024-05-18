@@ -6,6 +6,10 @@ import PieceSets from "../data/PieceSets";
 import Settings from "../data/Settings";
 import ThirdPieces from "./ThirdPieces";
 import SplitPieces from "./SplitPieces";
+import ambiguate_icon from "../assets/icons/ambiguate.svg";
+import Confirm from "../data/Confirm";
+
+const Ambiguate: Component = () => (<img src={ambiguate_icon} alt="Ambiguate" style={{ width: "40px", float: "right" }} />);
 
 const Sets: Component<{search: Accessor<string>, settings: Settings, sets: PieceSets}> = (props) => {
 	const upperWords = (word: string) => {
@@ -80,6 +84,22 @@ const Sets: Component<{search: Accessor<string>, settings: Settings, sets: Piece
 								<Card border={props.settings.dark() ? 'black' : undefined} class={props.settings.dark() ? 'bg-card' : undefined} text={props.settings.dark() ? "white" : "dark"}>
 									<Card.Header as="h5" class={`${props.settings.dark() ? 'bg-black' : 'bg-light'} fw-bolder`}>{upperWords(key)}</Card.Header>
 									<Card.Body>
+										<Show when={!props.settings.disableConfirms() && set.confirms.length > 0}>
+											<div class={`border border-${props.settings.dark() ? 'light' : 'dark'} rounded p-2`}>
+												<h3 class="border-bottom">Confirms</h3>
+												<For each={set.confirms}>
+													{(confirm: Confirm) => {
+														return (
+															<Row>
+																<Col md={4} class="text-end fw-semibold">{ upperWords(confirm.confirmed) }</Col>
+																<Col md={3} class="text-center"><i>is confirmed by</i></Col>
+																<Col md={5} class="text-start fw-semibold">{ upperWords(confirm.confirmedBy) }</Col>
+															</Row>
+														);
+													}}
+												</For>
+											</div>
+										</Show>
 										<For each={set.pieces}>
 											{(pieces: Pieces) => {
 												return (
@@ -89,7 +109,12 @@ const Sets: Component<{search: Accessor<string>, settings: Settings, sets: Piece
 														</Show>
 														<Show when={!props.settings.splitBigSets()}>
 															<Row class="piece-sets fw-semibold">
-																<Col style={(pieces.second as JSX.CSSProperties)}>{ upperWords(pieces.second.piece)}</Col>
+																<Col style={(pieces.second as JSX.CSSProperties)}>
+																	{ upperWords(pieces.second.piece) }
+																	<Show when={pieces.second.isDisambiguation}>
+																		<Ambiguate />
+																	</Show>
+																</Col>
 																<ThirdPieces settings={props.settings} pieces={pieces.third} formatWords={upperWords} />
 															</Row>
 														</Show>

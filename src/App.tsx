@@ -20,7 +20,9 @@ const App: Component<{
 	useOldSearch: Accessor<boolean>,
 	setUseOldSearch: Setter<boolean>,
 	splitBigSets: Accessor<boolean>,
-	setSplitBigSets: Setter<boolean>
+	setSplitBigSets: Setter<boolean>,
+	disableConfirms: Accessor<boolean>,
+	setDisableConfirms: Setter<boolean>
 }> = (props) => {
 	const locationIs = (page: string) => {
 		const location: Location<unknown> = useLocation();
@@ -136,6 +138,16 @@ const App: Component<{
 										label="Split Up Big Sets"
 										checked={props.splitBigSets()}
 										onChange={() => props.setSplitBigSets(!props.splitBigSets())}
+									/>
+								</Form>
+							</NavDropdown.Item>
+							<NavDropdown.Item as="div">
+								<Form onSubmit={(e) => e.preventDefault()}>
+									<Form.Check
+										type="switch"
+										label="Disable Confirmed Sets Section"
+										checked={props.disableConfirms()}
+										onChange={() => props.setDisableConfirms(!props.disableConfirms())}
 									/>
 								</Form>
 							</NavDropdown.Item>

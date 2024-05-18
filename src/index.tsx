@@ -1,4 +1,3 @@
-/* @refresh reload */
 import { render } from 'solid-js/web';
 import { Route, RouteSectionProps, Router } from "@solidjs/router";
 import { createEffect, createSignal, on } from 'solid-js';
@@ -21,6 +20,7 @@ const [dark, setDark] = makePersisted(createSignal(false), { name: "dark-mode" }
 const [upperCaseAllWords, setUpperCaseAllWords] = makePersisted(createSignal(true), { name: "uc-words" });
 const [useOldSearch, setUseOldSearch] = makePersisted(createSignal(false), { name: "old-search" });
 const [splitBigSets, setSplitBigSets] = makePersisted(createSignal(true), { name: "split-sets" });
+const [disableConfirms, setDisableConfirms] = makePersisted(createSignal(false), { name: "disable-confirms" });
 
 if (root != null && root.parentElement != null) {
 	root.parentElement.classList.add(dark() ? "text-bg-dark" : "text-bg-light");
@@ -49,6 +49,8 @@ const setApp = (props: RouteSectionProps<unknown>) => {
 			setUseOldSearch={setUseOldSearch}
 			splitBigSets={splitBigSets}
 			setSplitBigSets={setSplitBigSets}
+			disableConfirms={disableConfirms}
+			setDisableConfirms={setDisableConfirms}
 		>
 			{props.children}
 		</App>
@@ -59,7 +61,8 @@ const settings: Settings = {
 	dark: dark,
 	upperCaseAllWords: upperCaseAllWords,
 	useOldSearch: useOldSearch,
-	splitBigSets: splitBigSets
+	splitBigSets: splitBigSets,
+	disableConfirms: disableConfirms
 };
 
 render(() => (

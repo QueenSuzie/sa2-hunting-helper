@@ -105,7 +105,7 @@ sets.addSet("scramble for the emeralds", new PieceSet({ piece: "", isDisambiguat
 	.addPieces({ piece: "scarecrow's house", isDisambiguation: true }, ["horn (C)", "something bad (C)"])
 	.addPieces({ piece: "the rocket path", isDisambiguation: true }, "horn (C)");
 
-sets.addSet("second skull from the top fifth from the bottom (Left)", new PieceSet({ piece: "", isDisambiguation: true }, ["horn (C)", "something bad (C)"]))
+sets.addSet("second skull from the top fifth from the bottom (Left)", new PieceSet({ piece: "", isDisambiguation: true }, ["horn (C)", "something bad (C)"], "sl"))
 	.addPieces("sad-eyed pumpkin (P)", "sad-eyed pumpkin")
 	.addPieces("pumpkin family", "something bad (C)")
 	.addPieces("the rocket path", "stuffed nose")
@@ -113,7 +113,7 @@ sets.addSet("second skull from the top fifth from the bottom (Left)", new PieceS
 	.addPieces("you can see it but you can't take it", "king of the hill")
 	.addPieces({ piece: "lonely tombstone", isDisambiguation: true }, "horn (P)");
 
-sets.addSet("second skull from the top fifth from the bottom (Right)", new PieceSet({ piece: "", isDisambiguation: true }, ["horn (C)", "something bad (C)"]))
+sets.addSet("second skull from the top fifth from the bottom (Right)", new PieceSet({ piece: "", isDisambiguation: true }, ["horn (C)", "something bad (C)"], "sr"))
 	.addPieces("sad-eyed pumpkin (P)", "")
 	.addPieces("laughing pumpkin", "bearded mountain")
 	.addPieces("scarecrow's house", "horn (C)")
@@ -123,7 +123,7 @@ sets.addSet("second skull from the top fifth from the bottom (Right)", new Piece
 	.addPieces({ piece: "sleep with the dead", isDisambiguation: true }, "horn (P)")
 	.addPieces("three brothers' tombstone (C)", "king of the hill");
 
-sets.addSet("skulls on the right and left", new PieceSet({ piece: "", isDisambiguation: true }, ["horn (P)", "something bad (C)"]))
+sets.addSet("skulls on the right and left", new PieceSet({ piece: "", isDisambiguation: true }, ["horn (P)", "something bad (C)"], "srl"))
 	.addPieces("twin skulls", "terrible! a skull buried in the rocky wall")
 	.addPieces("sad-eyed pumpkin (P)", "king of the hill")
 	.addPieces("under a chimney", "three brothers' tombstone");

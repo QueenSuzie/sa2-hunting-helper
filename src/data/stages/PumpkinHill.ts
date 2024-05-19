@@ -115,7 +115,7 @@ sets.addSet("scramble for the emeralds", new PieceSet("sad-eyed pumpkin (P)", "h
 	.addPieces("you can see it but you can't take it", "angel's ring")
 	.addPieces({ piece: "scarecrow's house", isDisambiguation: true }, "horn (C)");
 
-sets.addSet("second skull from the top fifth from the bottom (Left)", new PieceSet("sad-eyed pumpkin (P)", "ghost pumpkin's necklace"))
+sets.addSet("second skull from the top fifth from the bottom (Left)", new PieceSet("sad-eyed pumpkin (P)", "ghost pumpkin's necklace", "sl"))
 	.addPieces("pumpkin family", "you can see it but you can't take it")
 	.addPieces("the rocket path", "flaming emeralds")
 	.addPieces("you can see it but you can't take it", "king of the hill")
@@ -123,7 +123,7 @@ sets.addSet("second skull from the top fifth from the bottom (Left)", new PieceS
 	.addPieces({ piece: "the person you are waiting for", isDisambiguation: true }, "horn (C)")
 	.addPieces({ piece: "twin skulls", isDisambiguation: true }, "horn (P)");
 
-sets.addSet("second skull from the top fifth from the bottom (Right)", new PieceSet({ piece: "sad-eyed pumpkin (P)", isDisambiguation: true }, "horn (C)"))
+sets.addSet("second skull from the top fifth from the bottom (Right)", new PieceSet({ piece: "sad-eyed pumpkin (P)", isDisambiguation: true }, "horn (C)", "sr"))
 	.addPieces("laughing pumpkin", "bearded mountain")
 	.addPieces("scarecrow's house", "horn (C)")
 	.addPieces("twin skulls", ["flaming emeralds", "stuffed nose"])
@@ -134,7 +134,7 @@ sets.addSet("second skull from the top fifth from the bottom (Right)", new Piece
 	.addPieces({ piece: "sleep with the dead", isDisambiguation: true }, "horn (P)")
 	.addPieces("three brother's tombstone (C)", "three scarecrow brothers");
 
-sets.addSet("skulls on the right and left", new PieceSet({ piece: "", isDisambiguation: true }, ["horn (P)", "something bad (C)"]))
+sets.addSet("skulls on the right and left", new PieceSet({ piece: "", isDisambiguation: true }, ["horn (P)", "something bad (C)"], "srl"))
 	.addPieces("sad-eyed pumpkin (P)", "sad-eyed pumpkin")
 	.addPieces("under a chimney", "horn (C)")
 	.addPieces("twin skulls", "angel's ring")

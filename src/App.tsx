@@ -1,8 +1,8 @@
 import { Col, Container, Form, FormControl, Nav, NavDropdown, Navbar, Row } from 'solid-bootstrap';
 import { Accessor, Component, For, Setter, Show } from 'solid-js';
 import { Location, useLocation } from '@solidjs/router';
-import { codes as codes_ph } from './data/stages/PumpkinHill';
-import { codes as codes_php } from './data/stages/PumpkinHillNG';
+import { codes as codes_ph } from './data/stages/PumpkinHillNG';
+import { codes as codes_php } from './data/stages/PumpkinHill';
 import { codes as codes_dc } from './data/stages/DeathChamber';
 import { codes as codes_mh } from './data/stages/MeteorHerd';
 import logo from './assets/emerald.webp';

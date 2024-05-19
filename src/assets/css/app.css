@@ -13,6 +13,12 @@
 	}
 }
 
+.card {
+	@media all and (min-width: 992px) {
+		min-width: 600px;
+	}
+}
+
 .navbar-codes {
 	@media all and (min-width: 992px) {
 		position: static;

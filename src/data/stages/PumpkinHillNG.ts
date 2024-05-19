@@ -79,8 +79,8 @@ sets.addSet("it's about to fall off", new PieceSet({ piece: "", isDisambiguation
 	.addPieces("scarecrow's house", "something bad (GT)")
 	.addPieces("the rocket path", "in the center of a triangle")
 	.addPieces("under the tracks", "terrible! a skull buried in the rocky wall")
-	.addPieces("pumpkin triangle", "disregard first row")
-	.addPieces("sleep behind a pumpkin", "disregard first row");
+	.addPieces("pumpkin triangle", "something bad (?)")
+	.addPieces("sleep behind a pumpkin", "something bad (?)");
 
 sets.addSet("path of the ghost train", new PieceSet({ piece: "", isDisambiguation: true }, ["horn (P)", "something bad (GT)"]))
 	.addPieces({ piece: "sad-eyed pumpkin (7/11 GT)", isDisambiguation: true }, "something bad (GT)")
@@ -166,7 +166,7 @@ sets.addSet("a farm house", new PieceSet({ piece: "", isDisambiguation: true }, 
 	.addPieces("lonely tombstone", ["stuffed nose", "horn (P)", "something bad (GT)"])
 	.addPieces("sleep with the dead", "sad-eyed pumpkin")
 	.addPieces("under the chimney", "something bad (C)")
-	.addPieces({ piece: "chimney near some grass", isDisambiguation: true }, "disregard first row")
+	.addPieces({ piece: "chimney near some grass", isDisambiguation: true }, "something bad (?)")
 	.addPieces({ piece: "three metal barrels", isDisambiguation: true }, "something bad (GT)")
 	.addPieces("three brothers' tombstone (2/3 C)", "sad-eyed pumpkin (2/3)");
 

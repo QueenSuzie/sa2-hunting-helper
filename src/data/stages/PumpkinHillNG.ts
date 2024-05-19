@@ -14,7 +14,7 @@ sets.addSet("three brothers' tombstone", new PieceSet({ piece: "", isDisambiguat
 	.addPieces("a place you can't jump", "king of the hill")
 	.addPieces("pumpkins who don't get along", "sad-eyed pumpkin")
 	.addPieces("pumpkin snowman", "something bad (GT)")
-	.addPieces("scarecrow's house", "suffering from a stuffed nose?")
+	.addPieces("scarecrow's house", "stuffed nose?")
 	.addPieces("the rocket path", "bearded mountain")
 	.addPieces({ piece: "pumpkin family", isDisambiguation: true }, "horn (P)");
 
@@ -86,13 +86,13 @@ sets.addSet("path of the ghost train", new PieceSet({ piece: "", isDisambiguatio
 	.addPieces({ piece: "sad-eyed pumpkin (7/11 GT)", isDisambiguation: true }, "something bad (GT)")
 	.addPieces("a scarecrow protecting a container", "sad-eyed pumpkin")
 	.addPieces("ghost train station", "king of the hill")
-	.addPieces("scramble for the emeralds", "suffering from a stuffed nose")
+	.addPieces("scramble for the emeralds", "stuffed nose")
 	.addPieces("the rocket path", "king of the hill");
 
 sets.addSet("a path lined with rings", new PieceSet({ piece: "", isDisambiguation: true }, ["horn (C)", "something bad (C)"]))
 	.addPieces("sad-eyed pumpkin (P)", "")
 	.addPieces("under a chimney", "something bad (C)")
-	.addPieces("scarecrow's house", "suffering from a stuffed nose")
+	.addPieces("scarecrow's house", "stuffed nose")
 	.addPieces("sleep behind a pumpkin", "horn (C)")
 	.addPieces("the person you are waiting for", "bearded mountain")
 	.addPieces("you can see it but you can't take it", "king of the hill")
@@ -108,8 +108,8 @@ sets.addSet("scramble for the emeralds", new PieceSet({ piece: "", isDisambiguat
 sets.addSet("second skull from the top fifth from the bottom (Left)", new PieceSet({ piece: "", isDisambiguation: true }, ["horn (C)", "something bad (C)"]))
 	.addPieces("sad-eyed pumpkin (P)", "sad-eyed pumpkin")
 	.addPieces("pumpkin family", "something bad (C)")
-	.addPieces("the rocket path", "suffering from a stuffed nose")
-	.addPieces("sleep with the dead", "suffering from a stuffed nose")
+	.addPieces("the rocket path", "stuffed nose")
+	.addPieces("sleep with the dead", "stuffed nose")
 	.addPieces("you can see it but you can't take it", "king of the hill")
 	.addPieces({ piece: "lonely tombstone", isDisambiguation: true }, "horn (P)");
 
@@ -129,7 +129,7 @@ sets.addSet("skulls on the right and left", new PieceSet({ piece: "", isDisambig
 	.addPieces("under a chimney", "three brothers' tombstone");
 
 sets.addSet("forgotten hut (GT)", new PieceSet({ piece: "", isDisambiguation: true }, ["horn (C)", "something bad (GT)"]))
-	.addPieces("twin skulls", "suffering from a stuffed nose")
+	.addPieces("twin skulls", "stuffed nose")
 	.addPieces({ piece: "sad-eyed pumpkin (P)", isDisambiguation: true }, "something bad (GT)")
 	.addPieces("pumpkin family", "lost pumpkin")
 	.addPieces("under a chimney", "something bad (C)")
@@ -139,12 +139,12 @@ sets.addSet("forgotten hut (GT)", new PieceSet({ piece: "", isDisambiguation: tr
 sets.addSet("turns but doesn't turn", new PieceSet({ piece: "", isDisambiguation: true }, ["horn (C)", "something bad (GT)"]))
 	.addPieces("sad-eyed pumpkin (P)", "")
 	.addPieces("pumpkin family", "horn (C)")
-	.addPieces("pumpkins who don't get along", "suffering from a stuffed nose")
+	.addPieces("pumpkins who don't get along", "stuffed nose")
 	.addPieces("pumpkin triangle", "three brothers' tombstone")
 	.addPieces("sleep behind a pumpkin", "three brothers' tombstone")
 	.addPieces("the rocket path", "something bad (GT)")
-	.addPieces("lonely tombstone", "suffering from a stuffed nose")
-	.addPieces("you can see it but you can't take it", "suffering from a stuffed nose")
+	.addPieces("lonely tombstone", "stuffed nose")
+	.addPieces("you can see it but you can't take it", "stuffed nose")
 	.addPieces({ piece: "ghost train station", isDisambiguation: true }, "something bad (C)");
 
 sets.addSet("king of the hill", new PieceSet({ piece: "", isDisambiguation: true }, ["horn (C)", "something bad (C)"]))
@@ -170,7 +170,7 @@ sets.addSet("a farm house", new PieceSet({ piece: "", isDisambiguation: true }, 
 	.addPieces({ piece: "three metal barrels", isDisambiguation: true }, "something bad (GT)")
 	.addPieces("three brothers' tombstone (2/3 C)", "sad-eyed pumpkin (2/3)");
 
-sets.addSet("a three-foot gap", new PieceSet("lonely tombstone", "suffering from a stuffed nose"))
+sets.addSet("a three-foot gap", new PieceSet("lonely tombstone", "stuffed nose"))
 	.addPieces("therre is only one on the cliff", "something bad (C)")
 	.addPieces("king of the hill", "lost pumpkin")
 	.addPieces({ piece: "cold iron bars", isDisambiguation: true }, "something bad (C)")
@@ -180,14 +180,14 @@ sets.addSet("laughing into tears", new PieceSet({ piece: "", isDisambiguation: t
 	.addPieces("cold iron bars", "something bad (C)")
 	.addPieces("sleep with the dead", "sad-eyed pumpkin")
 	.addPieces("there is only one on the cliff", "something bad (GT)")
-	.addPieces("king of the hill", "suffering from a stuffed nose")
+	.addPieces("king of the hill", "stuffed nose")
 	.addPieces("sleepless house", "lost pumpkin")
 	.addPieces("twin skulls", "something bad (GT)");
 
 sets.addSet("pumpkin family", new PieceSet({ piece: "", isDisambiguation: true }, "something bad (C)"))
 	.addPieces("cold iron bars", "something bad (GT)")
 	.addPieces("there is only one on the cliff", "king of the hill")
-	.addPieces("chimney near some grass", "suffering from a stuffed nose")
+	.addPieces("chimney near some grass", "stuffed nose")
 	.addPieces("king of the hill", "king of the hill")
 	.addPieces("three metal barrels", "in the center of a triangle")
 	.addPieces({ piece: "lonely tombstone", isDisambiguation: true }, "something bad (GT)")
@@ -195,7 +195,7 @@ sets.addSet("pumpkin family", new PieceSet({ piece: "", isDisambiguation: true }
 	.addPieces({ piece: "three brothers' tombstone", isDisambiguation: true }, "something bad (GT)");
 
 sets.addSet("three skull brothers", new PieceSet("sad-eyed pumpkin (P)", "three brothers' tombstone"))
-	.addPieces("lonely tombstone", "suffering from a stuffed nose")
+	.addPieces("lonely tombstone", "stuffed nose")
 	.addPieces("sleep with the dead", "bearded mountain")
 	.addPieces("there is only one on the cliff", ["sad-eyed pumpkin", "three against three"])
 	.addPieces("you can see it but you can't take it", "king of the hill")
@@ -218,9 +218,9 @@ sets.addSet("three metal barrels", new PieceSet({ piece: "", isDisambiguation: t
 	.addPieces("under the tracks", "something bad (C)");
 
 sets.addSet("tombstone guarded by four skulls", new PieceSet({ piece: "", isDisambiguation: true }, ["horn (P)", "something bad (GT)"]))
-	.addPieces("sad-eyed pumpkin (GT)", "suffering from a stuffed nose")
+	.addPieces("sad-eyed pumpkin (GT)", "stuffed nose")
 	.addPieces("a place you can't jump", "horn (GT)")
-	.addPieces("pumpkin family", "suffering from a stuffed nose")
+	.addPieces("pumpkin family", "stuffed nose")
 	.addPieces("pumpkins who don't get along", "horn (GT)")
 	.addPieces("ghost train station", "three against three")
 	.addPieces("pumpkin snowman", "king of the hill")
@@ -229,9 +229,9 @@ sets.addSet("tombstone guarded by four skulls", new PieceSet({ piece: "", isDisa
 
 sets.addSet("under the chimney (Near)", new PieceSet({ piece: "", isDisambiguation: true }, ["horn (C)", "something bad (C)"]))
 	.addPieces({ piece: "sad-eyed pumpkin (P)", isDisambiguation: true }, "something bad (C)")
-	.addPieces("pumpkin family", "suffering from a stuffed nose")
+	.addPieces("pumpkin family", "stuffed nose")
 	.addPieces("ghost train station", "sad-eyed pumpkin")
-	.addPieces("lonely tombstone", "suffering from a stuffed nose")
+	.addPieces("lonely tombstone", "stuffed nose")
 	.addPieces({ piece: "sleep behind a pumpkin", isDisambiguation: true }, ["horn (C)", "something bad (GT)"])
 	.addPieces({ piece: "sleep with the dead", isDisambiguation: true }, "horn (P)")
 	.addPieces({ piece: "twin skulls", isDisambiguation: true }, "something bad (GT)");

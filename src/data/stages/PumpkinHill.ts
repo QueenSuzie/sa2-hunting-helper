@@ -7,6 +7,13 @@ sets.addSet("", new PieceSet("", ""))
 	.addPieces("", "")
 	.addPieces("", "");
 
+sets.addSet("", new PieceSet({ piece: "", isDisambiguation: true }, ""))
+	.addPieces("", "")
+	.addPieces("", "")
+	.addPieces("", "")
+	.addPieces("", "")
+	.addPieces({ piece: "", isDisambiguation: true }, "");
+
 const codes: Code[] = [];
 for (const key of sets.keys()) {
 	const set = sets.get(key);

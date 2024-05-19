@@ -1,8 +1,9 @@
-import { Component, For, JSX } from "solid-js";
+import { Component, For, JSX, Show } from "solid-js";
 import { Pieces } from "../data/Pieces";
 import { Col, Row } from "solid-bootstrap";
 import Settings from "../data/Settings";
 import ThirdPieces from "./ThirdPieces";
+import Ambiguate from "./Ambiguate";
 
 const MAX_LENGTH = 50;
 
@@ -26,7 +27,12 @@ const SplitPieces: Component<{pieces: Pieces, settings: Settings, formatWords: (
 			{(pieces: Pieces) => {
 				return (
 					<Row class="piece-sets fw-semibold">
-						<Col style={(pieces.second as JSX.CSSProperties)}>{ props.formatWords(pieces.second.piece)}</Col>
+						<Col style={(pieces.second as JSX.CSSProperties)}>
+							{ props.formatWords(pieces.second.piece)}
+							<Show when={pieces.second.isDisambiguation}>
+								<Ambiguate />
+							</Show>
+						</Col>
 						<ThirdPieces settings={props.settings} pieces={pieces.third} formatWords={props.formatWords} />
 					</Row>
 				);

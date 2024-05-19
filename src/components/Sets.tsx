@@ -6,10 +6,8 @@ import PieceSets from "../data/PieceSets";
 import Settings from "../data/Settings";
 import ThirdPieces from "./ThirdPieces";
 import SplitPieces from "./SplitPieces";
-import ambiguate_icon from "../assets/icons/ambiguate.svg";
 import Confirm from "../data/Confirm";
-
-const Ambiguate: Component = () => (<img src={ambiguate_icon} alt="Ambiguate" style={{ width: "40px", float: "right" }} />);
+import Ambiguate from "./Ambiguate";
 
 const Sets: Component<{search: Accessor<string>, settings: Settings, sets: PieceSets}> = (props) => {
 	const upperWords = (word: string) => {

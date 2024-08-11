@@ -7,7 +7,7 @@ import Settings from "../data/Settings";
 import ThirdPieces from "./ThirdPieces";
 import SplitPieces from "./SplitPieces";
 import Confirm from "../data/Confirm";
-import Ambiguate from "./Ambiguate";
+import Ambiguate from "./icons/Ambiguate";
 
 const Sets: Component<{search: Accessor<string>, settings: Settings, sets: PieceSets}> = (props) => {
 	const upperWords = (word: string) => {

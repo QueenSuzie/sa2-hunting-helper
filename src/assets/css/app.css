@@ -46,3 +46,11 @@
 		}
 	}
 }
+
+.button-icon {
+	fill: #5f6368;
+	&:hover {
+		fill: #000000;
+		cursor: pointer;
+	}
+}

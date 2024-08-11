@@ -3,6 +3,8 @@ import { Button, Card, Col, Form, Modal, Row } from 'solid-bootstrap';
 import { produce, reconcile, unwrap, SetStoreFunction } from 'solid-js/store';
 import Settings from '../data/Settings';
 import Encryption from '../data/Encryption';
+import Edit from './icons/Edit';
+import Delete from './icons/Delete';
 
 const PieceDB: Component<{stage: string, search: Accessor<string>, settings: Settings, pieceDB: any, setPieceDB: SetStoreFunction<any>}> = (props) => {
 	const [bfSearch, setBFSearch] = createSignal("");
@@ -10,6 +12,8 @@ const PieceDB: Component<{stage: string, search: Accessor<string>, settings: Set
 	const [showModal, setShowModal] = createSignal(false);
 	const [showRestoreModal, setShowRestoreModal] = createSignal(false);
 	const [showErrorModal, setShowErrorModal] = createSignal(false);
+	const [showEditModal, setShowEditModal] = createSignal({ editBFTime: "", editCETime: "" });
+	const [showDeleteModal, setShowDeleteModal] = createSignal({ deleteBFTime: "", deleteCETime: "" });
 	const [bfTime, setBFTime] = createSignal("");
 	const [ceTime, setCETime] = createSignal("");
 	const [firstPiece, setFirstPiece] = createSignal("");
@@ -24,6 +28,57 @@ const PieceDB: Component<{stage: string, search: Accessor<string>, settings: Set
 		setFirstPiece("");
 		setSecondPiece("");
 		setThirdPiece("");
+	};
+
+	const getSetIndex = (sets: any[], time: string) => {
+		for (let i = 0; i < sets.length; i++) {
+			if (sets[i].time == time) {
+				return i;
+			}
+		}
+
+		return -1;
+	};
+
+	const handleShowEditModal = (bfTime: string, ceTime: string) => {
+		const data: any = unwrap(props.pieceDB);
+		if (!data[props.stage].hasOwnProperty(bfTime)) {
+			return;
+		}
+
+		const ceIndex: number = getSetIndex(data[props.stage][bfTime].ceTimes, ceTime);
+		if (ceIndex < 0) {
+			return;
+		}
+
+		setFirstPiece(data[props.stage][bfTime].ceTimes[ceIndex].p1);
+		setSecondPiece(data[props.stage][bfTime].ceTimes[ceIndex].p2);
+		setThirdPiece(data[props.stage][bfTime].ceTimes[ceIndex].p3);
+		setShowEditModal({ editBFTime: bfTime, editCETime: ceTime });
+	};
+
+	const handleCloseEditModal = () => {
+		setFirstPiece("");
+		setSecondPiece("");
+		setThirdPiece("");
+		setShowEditModal({ editBFTime: "", editCETime: "" });
+	};
+
+	const getInsertIndex = (bfTime: string, ceTime: string) => {
+		const data: any = unwrap(props.pieceDB);
+		let low: number = 0;
+		let high: number = data[props.stage][bfTime].ceTimes.length;
+
+		while (low < high) {
+			const mid: number = (low + high) >>> 1;
+			if (data[props.stage][bfTime].ceTimes[mid].time < ceTime) {
+				low = mid + 1;
+			} else {
+				high = mid;
+			}
+		}
+
+		return low;
 	};
 
 	const handleAddSet = () => {
@@ -46,23 +101,6 @@ const PieceDB: Component<{stage: string, search: Accessor<string>, settings: Set
 		}
 
 		handleCloseModal();
-	};
-
-	const getInsertIndex = (bfTime: string, ceTime: string) => {
-		const data: any = unwrap(props.pieceDB);
-		let low: number = 0;
-		let high: number = data[props.stage][bfTime].ceTimes.length;
-
-		while (low < high) {
-			const mid: number = (low + high) >>> 1;
-			if (data[props.stage][bfTime].ceTimes[mid].time < ceTime) {
-				low = mid + 1;
-			} else {
-				high = mid;
-			}
-		}
-
-		return low;
 	};
 
 	const backupDB = async () => {
@@ -96,6 +134,31 @@ const PieceDB: Component<{stage: string, search: Accessor<string>, settings: Set
 		};
 
 		reader.readAsArrayBuffer(event.target.files[0]);
+	};
+
+	const handleEditSet = (bfTime: string, ceTime: string) => {
+		if (!props.pieceDB[props.stage].hasOwnProperty(bfTime)) {
+			return;
+		}
+
+		const sets: any = unwrap(props.pieceDB)[props.stage][bfTime].ceTimes;
+		const ceIndex: number = getSetIndex(sets, ceTime);
+		props.setPieceDB(props.stage, bfTime, "ceTimes", ceIndex, produce((set: any) => {
+			set.p1 = firstPiece()
+			set.p2 = secondPiece()
+			set.p3 = thirdPiece()
+		}));
+		handleCloseEditModal();
+	};
+
+	const deleteEntry = (bfTime: string, ceTime: string) => {
+		if (!props.pieceDB[props.stage].hasOwnProperty(bfTime)) {
+			return;
+		}
+
+		const sets: any = unwrap(props.pieceDB)[props.stage][bfTime].ceTimes;
+		props.setPieceDB(props.stage, bfTime, "ceTimes", sets.filter((set: any) => set.time != ceTime));
+		setShowDeleteModal({ deleteBFTime: "", deleteCETime: "" });
 	};
 
 	const includeBF = (search: string, bfTime: string) => {
@@ -161,26 +224,30 @@ const PieceDB: Component<{stage: string, search: Accessor<string>, settings: Set
 
 						return (
 							<Show when={includeBF(bfSearch(), piece.bigFoot)}>
-								<Col sm="5">
+								<Col sm="6">
 									<Card border={props.settings.dark() ? 'black' : undefined} class={props.settings.dark() ? 'bg-card' : undefined} text={props.settings.dark() ? "white" : "dark"}>
 										<Card.Header as="h5" class={`${props.settings.dark() ? 'bg-black' : 'bg-light'} fw-bolder`}>{piece.bigFoot}</Card.Header>
 										<Card.Body>
 											<For each={piece.ceTimes}>
-												{(sets: any) => {
+												{(set: any) => {
 													return (
-														<Show when={includeCE(ceSearch(), sets.time)}>
+														<Show when={includeCE(ceSearch(), set.time)}>
 															<Row class="piece-sets fw-semibold">
 																<Col>
-																	{ sets.time }
+																	{ set.time }
 																</Col>
 																<Col>
-																	{ sets.p1 }
+																	{ set.p1 }
 																</Col>
 																<Col>
-																	{ sets.p2 }
+																	{ set.p2 }
 																</Col>
 																<Col>
-																	{ sets.p3 }
+																	{ set.p3 }
+																</Col>
+																<Col sm="1">
+																	<Edit button={true} onClick={() => handleShowEditModal(bfTime, set.time)} />
+																	<Delete button={true} onClick={() => setShowDeleteModal({ deleteBFTime: bfTime, deleteCETime: set.time })} />
 																</Col>
 															</Row>
 														</Show>
@@ -254,6 +321,42 @@ const PieceDB: Component<{stage: string, search: Accessor<string>, settings: Set
 				</Modal.Body>
 				<Modal.Footer>
 					<Button variant="primary" onClick={() => setShowErrorModal(false)}>OK</Button>
+				</Modal.Footer>
+			</Modal>
+			<Modal show={showEditModal().editBFTime != "" && showEditModal().editCETime != ""} onHide={() => setShowEditModal({ editBFTime: "", editCETime: "" })}>
+				<Modal.Header closeButton>
+					<Modal.Title>Editing Set BF: {showEditModal().editBFTime} - CE: {showEditModal().editCETime}</Modal.Title>
+				</Modal.Header>
+				<Modal.Body>
+					<Form onSubmit={(e) => { e.preventDefault(); handleEditSet(showEditModal().editBFTime, showEditModal().editCETime); }}>
+						<Form.Group class="mb-3">
+							<Form.Label>First Piece</Form.Label>
+							<Form.Control type="text" value={firstPiece()} onInput={e => setFirstPiece(e.target.value)} />
+						</Form.Group>
+						<Form.Group class="mb-3">
+							<Form.Label>Second Piece</Form.Label>
+							<Form.Control type="text" value={secondPiece()} onInput={e => setSecondPiece(e.target.value)} />
+						</Form.Group>
+						<Form.Group class="mb-3">
+							<Form.Label>Third Piece</Form.Label>
+							<Form.Control type="text" value={thirdPiece()} onInput={e => setThirdPiece(e.target.value)} />
+						</Form.Group>
+					</Form>
+				</Modal.Body>
+				<Modal.Footer>
+					<Button variant="secondary" onClick={handleCloseEditModal}>Close</Button>
+					<Button variant="primary" onClick={() => handleEditSet(showEditModal().editBFTime, showEditModal().editCETime)}>Save Changes</Button>
+				</Modal.Footer>
+			</Modal>
+			<Modal show={showDeleteModal().deleteBFTime != "" && showDeleteModal().deleteCETime != ""} onHide={() => setShowDeleteModal({ deleteBFTime: "", deleteCETime: "" })}>
+				<Modal.Body>
+					<div>Are you sure you want to delete the set for</div>
+					<div>BF: {showDeleteModal().deleteBFTime}</div>
+					<div>CE: {showDeleteModal().deleteCETime}</div>
+				</Modal.Body>
+				<Modal.Footer>
+					<Button variant="secondary" onClick={() => setShowDeleteModal({ deleteBFTime: "", deleteCETime: "" })}>Cancel</Button>
+					<Button variant="danger" onClick={() => deleteEntry(showDeleteModal().deleteBFTime, showDeleteModal().deleteCETime)}>Delete</Button>
 				</Modal.Footer>
 			</Modal>
 		</div>

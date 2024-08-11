@@ -3,7 +3,7 @@ import { Pieces } from "../data/Pieces";
 import { Col, Row } from "solid-bootstrap";
 import Settings from "../data/Settings";
 import ThirdPieces from "./ThirdPieces";
-import Ambiguate from "./Ambiguate";
+import Ambiguate from "./icons/Ambiguate";
 
 const MAX_LENGTH = 50;
 

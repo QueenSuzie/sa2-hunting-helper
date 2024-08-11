@@ -1,12 +1,16 @@
 import Confirm from "./Confirm";
 import { Piece, Pieces } from "./Pieces";
+import { JSX } from "solid-js";
 
 class PieceSet {
 	pieces: Pieces[];
-	code: string|null;
+	code: string|undefined;
 	confirms: Confirm[];
+	cardStyle?: JSX.CSSProperties;
+	cardHeaderStyle?: JSX.CSSProperties;
+	cardBodyStyle?: JSX.CSSProperties;
 
-	constructor(second: Piece|string, third: Piece[]|Piece|string[]|string, code: string|null = null) {
+	constructor(second: Piece|string, third: Piece[]|Piece|string[]|string, code?: string) {
 		this.confirms = [];
 		const second_piece: Piece = (typeof second === "string") ? { piece: second, isDisambiguation: false } : second;
 		this.pieces = [{ second: second_piece, third: this.thirdPieces(third) }];
@@ -21,6 +25,13 @@ class PieceSet {
 
 	addConfirm(confirmed: string, confirmedBy: string): this {
 		this.confirms.push({ confirmed: confirmed, confirmedBy: confirmedBy });
+		return this;
+	}
+
+	setStyle(cardStyle?: JSX.CSSProperties, cardHeaderStyle?: JSX.CSSProperties, cardBodyStyle?: JSX.CSSProperties) {
+		this.cardStyle = cardStyle;
+		this.cardHeaderStyle = cardHeaderStyle;
+		this.cardBodyStyle = cardBodyStyle;
 		return this;
 	}
 

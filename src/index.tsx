@@ -1,11 +1,13 @@
 import { render } from 'solid-js/web';
 import { Route, RouteSectionProps, Router } from "@solidjs/router";
 import { createEffect, createSignal, on } from 'solid-js';
+import { createStore } from 'solid-js/store';
 import { makePersisted } from '@solid-primitives/storage';
 import constants from './data/Constants';
 import App from './App';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
+import WildCanyon from './pages/WildCanyon';
 import PumpkinHill from './pages/PumpkinHill';
 import DeathChamber from './pages/DeathChamber';
 import MeteorHerd from './pages/MeteorHerd';
@@ -17,6 +19,7 @@ import './assets/css/app.css';
 const root = document.getElementById('app');
 const [search, setSearch] = createSignal('');
 const [dark, setDark] = makePersisted(createSignal(false), { name: "dark-mode" });
+const [pieceDB, setPieceDB] = makePersisted(createStore({}), { name: "piece-db" });
 const [upperCaseAllWords, setUpperCaseAllWords] = makePersisted(createSignal(true), { name: "uc-words" });
 const [useOldSearch, setUseOldSearch] = makePersisted(createSignal(false), { name: "old-search" });
 const [splitBigSets, setSplitBigSets] = makePersisted(createSignal(true), { name: "split-sets" });
@@ -68,6 +71,7 @@ const settings: Settings = {
 render(() => (
 	<Router base={constants.BASE_URL} root={props => setApp(props)}>
 		<Route path="/" component={Home} />
+		<Route path="/wc" component={() => <WildCanyon search={search} settings={settings} pieceDB={pieceDB} setPieceDB={setPieceDB}/>} />
 		<Route path="/ph" component={() => <PumpkinHill search={search} settings={settings} ng={true} />} />
 		<Route path="/php" component={() => <PumpkinHill search={search} settings={settings} ng={false} />} />
 		<Route path="/dc" component={() => <DeathChamber search={search} settings={settings} />} />

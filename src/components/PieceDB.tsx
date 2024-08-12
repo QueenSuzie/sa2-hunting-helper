@@ -14,6 +14,7 @@ const PieceDB: Component<{stage: string, search: Accessor<string>, settings: Set
 	const [showErrorModal, setShowErrorModal] = createSignal(false);
 	const [showEditModal, setShowEditModal] = createSignal({ editBFTime: "", editCETime: "" });
 	const [showDeleteModal, setShowDeleteModal] = createSignal({ deleteBFTime: "", deleteCETime: "" });
+	const [showDeleteCatModal, setShowDeleteCatModal] = createSignal("");
 	const [bfTime, setBFTime] = createSignal("");
 	const [ceTime, setCETime] = createSignal("");
 	const [firstPiece, setFirstPiece] = createSignal("");
@@ -148,6 +149,7 @@ const PieceDB: Component<{stage: string, search: Accessor<string>, settings: Set
 			set.p2 = secondPiece()
 			set.p3 = thirdPiece()
 		}));
+
 		handleCloseEditModal();
 	};
 
@@ -159,6 +161,15 @@ const PieceDB: Component<{stage: string, search: Accessor<string>, settings: Set
 		const sets: any = unwrap(props.pieceDB)[props.stage][bfTime].ceTimes;
 		props.setPieceDB(props.stage, bfTime, "ceTimes", sets.filter((set: any) => set.time != ceTime));
 		setShowDeleteModal({ deleteBFTime: "", deleteCETime: "" });
+	};
+
+	const deleteCategory = (bfTime: string) => {
+		if (!props.pieceDB[props.stage].hasOwnProperty(bfTime)) {
+			return;
+		}
+
+		props.setPieceDB(props.stage, bfTime, undefined);
+		setShowDeleteCatModal("");
 	};
 
 	const includeBF = (search: string, bfTime: string) => {
@@ -226,7 +237,12 @@ const PieceDB: Component<{stage: string, search: Accessor<string>, settings: Set
 							<Show when={includeBF(bfSearch(), piece.bigFoot)}>
 								<Col sm="6">
 									<Card border={props.settings.dark() ? 'black' : undefined} class={props.settings.dark() ? 'bg-card' : undefined} text={props.settings.dark() ? "white" : "dark"}>
-										<Card.Header as="h5" class={`${props.settings.dark() ? 'bg-black' : 'bg-light'} fw-bolder`}>{piece.bigFoot}</Card.Header>
+										<Card.Header as="h5" class={`${props.settings.dark() ? 'bg-black' : 'bg-light'} fw-bolder`}>
+											{piece.bigFoot}
+											<div class="float-end">
+												<Delete button={true} onClick={() => setShowDeleteCatModal(bfTime)} />
+											</div>
+										</Card.Header>
 										<Card.Body>
 											<For each={piece.ceTimes}>
 												{(set: any) => {
@@ -303,8 +319,8 @@ const PieceDB: Component<{stage: string, search: Accessor<string>, settings: Set
 					</Form>
 				</Modal.Body>
 				<Modal.Footer>
-					<Button variant="secondary" onClick={handleCloseModal}>Close</Button>
-					<Button variant="primary" onClick={handleAddSet}>Save Changes</Button>
+					<Button variant="secondary" onClick={handleCloseModal}>Cancel</Button>
+					<Button variant="primary" onClick={handleAddSet}>Add Set</Button>
 				</Modal.Footer>
 			</Modal>
 			<Modal show={showRestoreModal()} onHide={() => setShowRestoreModal(false)}>
@@ -357,6 +373,15 @@ const PieceDB: Component<{stage: string, search: Accessor<string>, settings: Set
 				<Modal.Footer>
 					<Button variant="secondary" onClick={() => setShowDeleteModal({ deleteBFTime: "", deleteCETime: "" })}>Cancel</Button>
 					<Button variant="danger" onClick={() => deleteEntry(showDeleteModal().deleteBFTime, showDeleteModal().deleteCETime)}>Delete</Button>
+				</Modal.Footer>
+			</Modal>
+			<Modal show={showDeleteCatModal() != ""} onHide={() => setShowDeleteCatModal("")}>
+				<Modal.Body>
+					Are you sure you want to delete this entire category ({showDeleteCatModal()}) and all its sets?
+				</Modal.Body>
+				<Modal.Footer>
+					<Button variant="secondary" onClick={() => setShowDeleteModal({ deleteBFTime: "", deleteCETime: "" })}>Cancel</Button>
+					<Button variant="danger" onClick={() => deleteCategory(showDeleteCatModal())}>Delete</Button>
 				</Modal.Footer>
 			</Modal>
 		</div>

@@ -380,7 +380,7 @@ const PieceDB: Component<{stage: string, search: Accessor<string>, settings: Set
 					Are you sure you want to delete this entire category ({showDeleteCatModal()}) and all its sets?
 				</Modal.Body>
 				<Modal.Footer>
-					<Button variant="secondary" onClick={() => setShowDeleteModal({ deleteBFTime: "", deleteCETime: "" })}>Cancel</Button>
+					<Button variant="secondary" onClick={() => setShowDeleteCatModal("")}>Cancel</Button>
 					<Button variant="danger" onClick={() => deleteCategory(showDeleteCatModal())}>Delete</Button>
 				</Modal.Footer>
 			</Modal>

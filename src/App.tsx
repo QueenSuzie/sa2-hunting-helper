@@ -24,6 +24,8 @@ const App: Component<{
 	disableConfirms: Accessor<boolean>,
 	setDisableConfirms: Setter<boolean>
 }> = (props) => {
+	const isWCEnabled: boolean = false;
+
 	const locationIs = (page: string) => {
 		const location: Location<unknown> = useLocation();
 		const locations: string[] = location.pathname.split("/");
@@ -65,7 +67,7 @@ const App: Component<{
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav class="me-auto">
 							<Nav.Link href={constants.BASE_URL} active={locationIs("home") || locationIs("")}>Home</Nav.Link>
-							<Nav.Link href={`${constants.BASE_URL}/wc`} active={locationIs("wc")}>Wild Canyon</Nav.Link>
+							{ isWCEnabled ? <Nav.Link href={`${constants.BASE_URL}/wc`} active={locationIs("wc")}>Wild Canyon</Nav.Link> : null }
 							<Nav.Link href={`${constants.BASE_URL}/ph`} active={locationIs("ph")}>Pumpkin Hill</Nav.Link>
 							<Nav.Link href={`${constants.BASE_URL}/php`} active={locationIs("php")}>Pumpkin Hill NG+</Nav.Link>
 							<Nav.Link href={`${constants.BASE_URL}/dc`} active={locationIs("dc")}>Death Chamber</Nav.Link>

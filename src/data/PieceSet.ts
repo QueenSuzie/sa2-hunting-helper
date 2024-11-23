@@ -9,6 +9,7 @@ class PieceSet {
 	cardStyle?: JSX.CSSProperties;
 	cardHeaderStyle?: JSX.CSSProperties;
 	cardBodyStyle?: JSX.CSSProperties;
+	cardBorder?: string;
 
 	constructor(second: Piece|string, third: Piece[]|Piece|string[]|string, code?: string) {
 		this.confirms = [];
@@ -28,10 +29,11 @@ class PieceSet {
 		return this;
 	}
 
-	setStyle(cardStyle?: JSX.CSSProperties, cardHeaderStyle?: JSX.CSSProperties, cardBodyStyle?: JSX.CSSProperties) {
+	setStyle(cardStyle?: JSX.CSSProperties, cardHeaderStyle?: JSX.CSSProperties, cardBodyStyle?: JSX.CSSProperties, cardBorder?: string) {
 		this.cardStyle = cardStyle;
 		this.cardHeaderStyle = cardHeaderStyle;
 		this.cardBodyStyle = cardBodyStyle;
+		this.cardBorder = cardBorder;
 		return this;
 	}
 

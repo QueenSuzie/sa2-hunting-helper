@@ -1,8 +1,7 @@
 type Piece = {
 	piece: string,
 	isDisambiguation: boolean,
-	color?: string|undefined,
-	"background-color"?: string|undefined
+	color?: string|undefined
 };
 
 type Pieces = {

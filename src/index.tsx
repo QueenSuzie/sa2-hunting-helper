@@ -11,8 +11,7 @@ import DeathChamber from './pages/DeathChamber';
 import MeteorHerd from './pages/MeteorHerd';
 import Settings from './data/Settings';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './assets/css/app.css';
+import './assets/css/app.scss';
 
 const root = document.getElementById('app');
 const [search, setSearch] = createSignal('');

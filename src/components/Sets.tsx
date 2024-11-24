@@ -15,7 +15,7 @@ const Sets: Component<{search: Accessor<string>, settings: Settings, sets: Piece
 			return word.charAt(0).toUpperCase() + word.slice(1);
 		}
 
-		return word.replace(/(^([a-zA-Z\p{M}]))|([ -][a-zA-Z\p{M}])/g,
+		return word.replace(/(^([a-zA-Z\p{M}]))|([ -][a-zA-Z\p{M}])/gu,
 			function(s){
 				return s.toUpperCase();
 			});
@@ -32,13 +32,12 @@ const Sets: Component<{search: Accessor<string>, settings: Settings, sets: Piece
 		return true;
 	};
 
-	const includeSet = (term: string, value: string, code: string|null) => {
+	const includeSet = (term: string, value: string, code: string|undefined) => {
 		term = term.trim().toLowerCase();
 		if (term == "") {
 			return true;
 		}
 
-		console.log(code);
 		if (code != null && term === code) {
 			return true;
 		}
@@ -79,9 +78,18 @@ const Sets: Component<{search: Accessor<string>, settings: Settings, sets: Piece
 					return (
 						<Show when={includeSet(props.search(), key.toLowerCase(), set.code)}>
 							<Col>
-								<Card border={props.settings.dark() ? 'black' : undefined} class={props.settings.dark() ? 'bg-card' : undefined} text={props.settings.dark() ? "white" : "dark"}>
-									<Card.Header as="h5" class={`${props.settings.dark() ? 'bg-black' : 'bg-light'} fw-bolder`}>{upperWords(key)}</Card.Header>
-									<Card.Body>
+								<Card
+									border={
+										set.cardBorder ?
+											set.cardBorder :
+											props.settings.dark() ? 'black' : undefined
+									}
+									class={props.settings.dark() ? 'bg-card' : undefined}
+									text={props.settings.dark() ? "white" : "dark"}
+									style={set.cardStyle}
+								>
+									<Card.Header as="h5" class={`${props.settings.dark() ? 'bg-black' : 'bg-light'} fw-bolder`} style={set.cardHeaderStyle}>{upperWords(key)}</Card.Header>
+									<Card.Body style={set.cardBodyStyle}>
 										<Show when={!props.settings.disableConfirms() && set.confirms.length > 0}>
 											<div class={`border border-${props.settings.dark() ? 'light' : 'dark'} rounded p-2`}>
 												<h3 class="border-bottom">Confirms</h3>

@@ -3,6 +3,7 @@ import { Accessor, Component, For, Setter, Show } from 'solid-js';
 import { Location, useLocation } from '@solidjs/router';
 import { codes as codes_ph } from './data/stages/PumpkinHillNG';
 import { codes as codes_php } from './data/stages/PumpkinHill';
+import { codes as codes_am } from './data/stages/AquaticMine';
 import { codes as codes_dc } from './data/stages/DeathChamber';
 import { codes as codes_mh } from './data/stages/MeteorHerd';
 import logo from './assets/emerald.webp';
@@ -67,6 +68,7 @@ const App: Component<{
 							<Nav.Link href={constants.BASE_URL} active={locationIs("home") || locationIs("")}>Home</Nav.Link>
 							<Nav.Link href={`${constants.BASE_URL}/ph`} active={locationIs("ph")}>Pumpkin Hill</Nav.Link>
 							<Nav.Link href={`${constants.BASE_URL}/php`} active={locationIs("php")}>Pumpkin Hill NG+</Nav.Link>
+							<Nav.Link href={`${constants.BASE_URL}/am`} active={locationIs("am")}>Aquatic Mine</Nav.Link>
 							<Nav.Link href={`${constants.BASE_URL}/dc`} active={locationIs("dc")}>Death Chamber</Nav.Link>
 							<Nav.Link href={`${constants.BASE_URL}/mh`} active={locationIs("mh")}>Meteor Herd</Nav.Link>
 							<Show when={locationIs("ph") && codes_ph.length > 0}>
@@ -77,6 +79,11 @@ const App: Component<{
 							<Show when={locationIs("php") && codes_php.length > 0}>
 								<NavDropdown title="Codes" class="navbar-codes" menuVariant={props.dark() ? "dark" : "light"} autoClose="outside">
 									{ codesDropdown(codes_php) }
+								</NavDropdown>
+							</Show>
+							<Show when={locationIs("am") && codes_am.length > 0}>
+								<NavDropdown title="Codes" class="navbar-codes" menuVariant={props.dark() ? "dark" : "light"} autoClose="outside">
+									{ codesDropdown(codes_am) }
 								</NavDropdown>
 							</Show>
 							<Show when={locationIs("dc") && codes_dc.length > 0}>

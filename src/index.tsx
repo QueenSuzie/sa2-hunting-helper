@@ -7,6 +7,7 @@ import App from './App';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import PumpkinHill from './pages/PumpkinHill';
+import AquaticMine from './pages/AquaticMine';
 import DeathChamber from './pages/DeathChamber';
 import MeteorHerd from './pages/MeteorHerd';
 import Settings from './data/Settings';
@@ -69,6 +70,7 @@ render(() => (
 		<Route path="/" component={Home} />
 		<Route path="/ph" component={() => <PumpkinHill search={search} settings={settings} ng={true} />} />
 		<Route path="/php" component={() => <PumpkinHill search={search} settings={settings} ng={false} />} />
+		<Route path="/am" component={() => <AquaticMine search={search} settings={settings} />} />
 		<Route path="/dc" component={() => <DeathChamber search={search} settings={settings} />} />
 		<Route path="/mh" component={() => <MeteorHerd search={search} settings={settings} />} />
 		<Route path="*404" component={NotFound} />

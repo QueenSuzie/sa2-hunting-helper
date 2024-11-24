@@ -1,3 +1,13 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+// merge with existing $theme-colors map
+$theme-colors: map-merge($theme-colors, (
+  "brown": #804000
+));
+
+@import "bootstrap/scss/bootstrap";
+
 .bg-card {
 	background-color: #181b1e;
 }

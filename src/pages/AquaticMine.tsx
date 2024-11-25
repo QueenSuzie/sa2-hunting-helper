@@ -10,7 +10,11 @@ const AquaticMine: Component<{search: Accessor<string>, settings: Settings}> = (
 			<Row class="mb-4">
 				<Col sm={0} md={2}></Col>
 				<Col>
-					<Card>
+					<Card
+						border={props.settings.dark() ? 'black' : undefined}
+						class={props.settings.dark() ? 'bg-card' : undefined}
+						text={props.settings.dark() ? "white" : "dark"}
+					>
 						<Card.Body>For now this will be used only as a mine cart dumping area bail out tool. If you get it, left is p1 and right is p3.</Card.Body>
 					</Card>
 				</Col>

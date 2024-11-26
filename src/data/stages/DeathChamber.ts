@@ -180,8 +180,6 @@ sets.addSet("angry man (Death Strat)", new PieceSet("gorilla's hideout", newPiec
 	.setStyle(blue_p1.card, blue_p1.header, undefined, blue_p1.border);
 sets.addSet("between the legs (Death Strat)", new PieceSet("burning mad", newPiece("between four pillars", blue)))
 	.setStyle(blue_p1.card, blue_p1.header, undefined, blue_p1.border);
-sets.addSet("bugs food (Death Strat)", new PieceSet("white family", newPiece("between four pillars", blue)))
-	.setStyle(blue_p1.card, blue_p1.header, undefined, blue_p1.border);
 sets.addSet("four square pillars (Death Strat)", new PieceSet("gorilla's hideout", newPiece("flying fish", blue)))
 	.addPieces("huge bug", newPiece("flying fish", blue))
 	.addPieces("bugs don't like it", newPiece("the only one who is looking down", blue))
@@ -194,6 +192,11 @@ sets.addSet("water bug (Death Strat)", new PieceSet("peek-a-boo eggman", newPiec
 	.setStyle(blue_p1.card, blue_p1.header, undefined, blue_p1.border);
 sets.addSet("white dot indicates blue (Death Strat)", new PieceSet("two gatekeepers", newPiece("between four pillars", blue)))
 	.addPieces("corner light", newPiece("between four pillars", blue))
+	.setStyle(blue_p1.card, blue_p1.header, undefined, blue_p1.border);
+
+const bugs_food = new PieceSet("white family", newPiece("between four pillars", blue));
+sets.addSet("bugs food (Death Strat)", bugs_food);
+sets.addSet("bug's food (Death Strat)", bugs_food)
 	.setStyle(blue_p1.card, blue_p1.header, undefined, blue_p1.border);
 
 const codes: Code[] = [];

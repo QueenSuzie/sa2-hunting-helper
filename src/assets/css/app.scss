@@ -3,7 +3,8 @@
 
 // merge with existing $theme-colors map
 $theme-colors: map-merge($theme-colors, (
-  "brown": #804000
+	"purple": purple,
+	"brown": #804000
 ));
 
 @import "bootstrap/scss/bootstrap";

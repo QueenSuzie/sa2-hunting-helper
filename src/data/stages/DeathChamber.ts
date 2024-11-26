@@ -9,6 +9,12 @@ const blue = "blue";
 const green = "green";
 const brown = "#804000";
 
+const purple_p1 = {
+	card: { "border-color": purple + " !important" },
+	header: { "border-color": purple, color: purple },
+	border: "purple"
+};
+
 const red_p1 = {
 	card: { "border-color": "red !important" },
 	header: { "border-color": "red", color: "red" },
@@ -57,7 +63,7 @@ sets.addSet("three container brothers", new PieceSet(newPiece("scorpions who don
 	.addPieces(newPiece("fire dance", purple), newPieces(["red jewel", "where scorpion used to be"], blue))
 	.addPieces(newPiece("on the red ball", purple), "merry-go-round")
 	.addPieces(newPiece("red body", purple), ["angel's ring (1/3)", "*DIE*"])
-	.addPieces(newPiece("gorilla's hideout", green), newPiece("dig in the area in front of a scorpion", green))
+	.addPieces(newPiece("gorilla's hideout", green), "dig in the area in front of a scorpion!")
 	.addPieces(newPiece("peek-a-boo eggman", green), newPiece("flat eggman", blue))
 	.addPieces(newPiece("huge bug", green), "eggman's eye level")
 	.addPieces(newPiece("bugs don't like it", green), "eggman's eye level")
@@ -173,6 +179,14 @@ sets.addSet("patterned shorts", new PieceSet(newPiece("fire dance", purple), new
 	.addPieces(newPiece("the treasure that you can't open", blue), "*DIE*")
 	.addPieces(newPiece("a bat and a scorpion", purple), "*DIE*")
 	.addPieces(newPiece("in the treasure chest", blue), "*DIE*");
+
+sets.addSet("angry guy", new PieceSet(newPiece("gorilla's hideout", green), newPiece("the only one who is looking down", blue)))
+	.addPieces(newPiece("peek-a-boo eggman", green), newPiece("flying fish", blue))
+	.addPieces(newPiece("white family", green), "dig in the area in front of a scorpion! (1/3)")
+	.addPieces(newPiece("one who is looking the other way...", blue), newPieces(["wind power", "the only one who is looking down"], red))
+	.addPieces(newPiece("in the treasure chest", blue), ["merry-go-round", "flat scorpion"])
+	.addPieces(newPiece("ghost protects the goddess", purple), ["angel's ring", "flat scorpion"])
+	.setStyle(purple_p1.card, purple_p1.header, undefined, purple_p1.border);
 
 sets.addSet("cowering beetle (Death Strat)", new PieceSet("gorilla's hideout", newPiece("flying fish", blue)))
 	.setStyle(blue_p1.card, blue_p1.header, undefined, blue_p1.border);

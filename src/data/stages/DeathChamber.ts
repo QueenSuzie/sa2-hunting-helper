@@ -94,7 +94,7 @@ sets.addSet("above the small flame", new PieceSet(newPiece("golden goddess", blu
 	.addPieces(newPiece("on the red ball", purple), "*DIE*")
 	.setStyle(red_p1.card, red_p1.header, undefined, red_p1.border);
 
-sets.addSet("black and yellow stripes", new PieceSet(newPiece("golden goddess", blue), newPiece("on the square cliff", purple)))
+sets.addSet("black and yellow stripes", new PieceSet(newPiece("golden goddess", blue), newPiece("on the square cliff", purple), "by"))
 	.addPieces(newPiece("the treasure that you can't open", blue), ["dig in the area in front of the scorpion! (1/2)", "*DIE*"])
 	.addPieces(newPiece("angry man", blue), newPiece("above omochao", green))
 	.addPieces(newPiece("two beautiful women on the flame", blue), ["eggman's eye level (1/2)", "*DIE*"])
@@ -142,7 +142,7 @@ sets.addSet("burning mad", new PieceSet(newPiece("golden goddess", blue), newPie
 	.addPieces(newPiece("gorilla's hideout", green), "*DIE*")
 	.setStyle(brown_p1.card, brown_p1.header, undefined, brown_p1.border);
 
-sets.addSet("yellow and black stripes", new PieceSet(newPiece("golden goddess", blue), newPieces(["two bugs who gather in two trees", "blue secret (2/3)"], red)))
+sets.addSet("yellow and black stripes", new PieceSet(newPiece("golden goddess", blue), newPieces(["two bugs who gather in two trees", "blue secret (2/3)"], red), "yb"))
 	.addPieces(newPiece("triangle flame", blue), newPiece("blue secret", blue))
 	.addPieces(newPiece("two beautiful women on the flame", blue), newPiece("blue secret", blue))
 	.addPieces(newPiece("scorpions who don't get along", blue), newPiece("blue secret", blue))

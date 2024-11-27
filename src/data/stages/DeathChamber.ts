@@ -73,7 +73,7 @@ sets.addSet("three container brothers", new PieceSet(newPiece("scorpions who don
 	.setStyle(red_p1.card, red_p1.header, undefined, red_p1.border);
 
 sets.addSet("two mouths", new PieceSet("big marshmallow", newPiece("under the red light", purple)))
-	.addPieces(newPiece("two beautiful women on the flame", blue), newPieces(["angel's ring", "flat scorpion", "*HINT*"], green))
+	.addPieces(newPiece("two beautiful women on the flame", blue), ["angel's ring", "flat scorpion", "*HINT*"])
 	.addPieces(newPiece("sniper", blue), "dig in the area in front of the scorpion!")
 	.addPieces(newPiece("angry man", blue), newPieces(["eggman's eye level", "bug tree"], purple))
 	.addPieces(newPiece("fire dance", purple), newPiece("there is a flame, but no light can reach there", blue))
@@ -81,7 +81,7 @@ sets.addSet("two mouths", new PieceSet("big marshmallow", newPiece("under the re
 	.addPieces(newPiece("ghost protects the goddess", purple), newPieces(["on the square cliff (1/2)", "*DIE*"], purple))
 	.addPieces(newPiece("bugs don't like it", green), "eggman's eye level")
 	.addPieces(newPiece("gorilla's hideout", green), newPiece("flat eggman", blue))
-	.addPieces(newPiece("peek-a-boo eggman", green), newPiece("flat scorpion", green))
+	.addPieces(newPiece("peek-a-boo eggman", green), "flat scorpion")
 	.addPieces(newPiece("one who is looking the other way", blue), "*DIE*")
 	.addPieces(newPiece("triangle flame", blue), "*DIE*")
 	.addPieces(newPiece("in the treasure chest", blue), "*DIE*")
@@ -153,7 +153,7 @@ sets.addSet("yellow and black stripes", new PieceSet(newPiece("golden goddess", 
 	.addPieces(newPiece("two beautiful women on the flame", blue), newPiece("blue secret", blue))
 	.addPieces(newPiece("scorpions who don't get along", blue), newPiece("blue secret", blue))
 	.addPieces(newPiece("in the treasure chest", blue), newPiece("four suns look at each other", red))
-	.addPieces(newPiece("huge black wall", purple), newPiece("flat scorpion", green))
+	.addPieces(newPiece("huge black wall", purple), "flat scorpion")
 	.addPieces(newPiece("red body", purple), newPiece("where the scorpion used to be", purple))
 	.addPieces(newPiece("fire dance", purple), "merry-go-round")
 	.addPieces(newPiece("ghost protects the goddess", purple), newPiece("under the red light (1/2)", purple))

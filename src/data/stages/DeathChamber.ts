@@ -87,7 +87,7 @@ sets.addSet("two mouths", new PieceSet("big marshmallow", newPiece("under the re
 	.addPieces(newPiece("in the treasure chest", blue), "*DIE*")
 	.setStyle(red_p1.card, red_p1.header, undefined, red_p1.border);
 
-sets.addSet("above the small flame", new PieceSet(newPiece("golden goddess", blue), newPieces(["blue secret (1/2", "*DIE*"], blue)))
+sets.addSet("above the small flame", new PieceSet(newPiece("golden goddess", blue), newPieces(["blue secret (1/2)", "*DIE*"], blue)))
 	.addPieces(newPiece("triangle flame", blue), newPiece("blue secret", blue))
 	.addPieces(newPiece("in the treasure chest", blue), newPiece("two eggmans facing each other", purple))
 	.addPieces(newPiece("two beautiful women on the flame", blue), "eggman's eye level")

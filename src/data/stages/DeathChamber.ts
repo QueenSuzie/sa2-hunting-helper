@@ -114,8 +114,8 @@ sets.addSet("black and yellow stripes", new PieceSet(newPiece("golden goddess", 
 
 sets.addSet("Bugs on Patrol", new PieceSet("scorpion tattoo", newPiece("two beautiful women on the flame", blue)))
 	.addPieces("big marshmallow", newPiece("fire dance", purple))
-	.addPieces(newPiece("fire dance", blue), "heart (1/3)")
 	.addPieces("embarrassing place", newPiece("BLUE", blue))
+	.addPieces(newPiece("fire dance", purple), "heart (1/3)")
 	.addPieces(newPiece("cowering beetle", blue), newPiece("gorilla's hideout", green))
 	.addPieces(newPiece("golden goddess", blue), "")
 	.addPieces(newPiece("eyes bugged out...?", green), newPiece("angry man", blue))

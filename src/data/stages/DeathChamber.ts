@@ -114,6 +114,7 @@ sets.addSet("black and yellow stripes", new PieceSet(newPiece("golden goddess", 
 
 sets.addSet("Bugs on Patrol", new PieceSet("scorpion tattoo", newPiece("two beautiful women on the flame", blue)))
 	.addPieces("big marshmallow", newPiece("fire dance", purple))
+	.addPieces(newPiece("fire dance", blue), "heart (1/3)")
 	.addPieces("embarrassing place", newPiece("BLUE", blue))
 	.addPieces(newPiece("cowering beetle", blue), newPiece("gorilla's hideout", green))
 	.addPieces(newPiece("golden goddess", blue), "")
@@ -132,6 +133,7 @@ sets.addSet("roasted keys", new PieceSet("patterned shorts", newPieces(["wanderi
 	.addPieces(newPiece("red body", purple), "eggman's eye level")
 	.addPieces(newPiece("treasure chest storage", green), newPieces(["in front of the scorpion", "under the red jewel"], blue))
 	.addPieces(newPiece("fly higher than a bird", green), "dig in the area in front of the scorpion!")
+	.addPieces("E-01 (core)", "above omochao")
 	.addPieces(newPiece("E-01", green), ["angel's ring", "dig in the area in front of the scorpion!"])
 	.addPieces(newPiece("bat's nest", green), newPiece("the area that four scorpions are looking at", blue))
 	.setStyle(red_p1.card, red_p1.header, undefined, red_p1.border);

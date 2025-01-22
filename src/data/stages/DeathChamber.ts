@@ -182,6 +182,25 @@ sets.addSet("patterned shorts", new PieceSet(newPiece("fire dance", purple), new
 	.addPieces(newPiece("a bat and a scorpion", purple), "*DIE*")
 	.addPieces(newPiece("in the treasure chest", blue), "*DIE*");
 
+sets.addSet("big marshmallow", new PieceSet(newPiece("in the treasure chest", blue), newPiece("under the red jewel", blue)))
+	.addPieces(newPiece("bug's baby", red), newPiece("flying fish", blue))
+	.addPieces(newPiece("place where bug used to be", red), newPiece("two eggmans facing each other", purple))
+	.addPieces(newPiece("beauty and the beast", red), newPiece("two eggmans facing each other", purple))
+	.addPieces(newPiece("tilted picture", red), newPiece("blue secret", blue))
+	.addPieces(newPiece("on the red ball", purple), newPiece("flying fish", blue))
+	.addPieces(newPiece("three tails", purple), newPiece("on the square cliff", purple))
+	.addPieces(newPiece("ghost protects the goddess", purple), newPiece("there is a flame but no light can reach", blue))
+	.addPieces(newPiece("golden goddess", blue), "*DIE*");
+
+sets.addSet("embarrassing place", new PieceSet(newPiece("one who is looking the other way...", blue), newPiece("two eggmans facing each other", purple)))
+	.addPieces(newPiece("in the treasure chest", blue), newPiece("the area that four scorpions are looking at", blue))
+	.addPieces(newPiece("angry guy", purple), newPiece("on the square cliff", purple))
+
+sets.addSet("shoe box", new PieceSet(newPiece("bug's baby", red), newPiece("it's floating between the flames", green)))
+	.addPieces(newPiece("place where bug used to be", blue), newPiece("the only one who is looking down", blue))
+	.addPieces(newPiece("treasure chest protected by a scorpion", red), newPiece("on the square cliff", purple))
+	.addPieces(newPiece("huge black wall", purple), newPieces(["under the red light", "where scorpion used to be"], purple))
+
 sets.addSet("angry guy", new PieceSet(newPiece("gorilla's hideout", green), newPiece("the only one who is looking down", blue)))
 	.addPieces(newPiece("peek-a-boo eggman", green), newPiece("flying fish", blue))
 	.addPieces(newPiece("white family", green), "dig in the area in front of a scorpion! (1/3)")
@@ -190,15 +209,28 @@ sets.addSet("angry guy", new PieceSet(newPiece("gorilla's hideout", green), newP
 	.addPieces(newPiece("ghost protects the goddess", purple), ["angel's ring", "flat scorpion"])
 	.setStyle(purple_p1.card, purple_p1.header, undefined, purple_p1.border);
 
+sets.addSet("fire dance", new PieceSet(newPiece("burning mad", green), "dig in the area in front of a scorpion!"))
+	.addPieces(newPiece("corner light", red), ["eggman's eye level", "flat scorpion"])
+	.addPieces(newPiece("ghost protects the goddess", purple), "dig in the area in front of a scorpion!")
+	.addPieces(newPiece("huge bug", green), "dig in the area in front of a scorpion!")
+	.addPieces(newPiece("gorilla's hideout", green), "dig in the area in front of a scorpion!")
+	.addPieces(newPiece("peek-a-boo eggman", blue), newPiece("flat eggman", blue))
+	.addPieces(newPiece("four leaves", blue), newPiece("flat eggman", blue))
+	.addPieces(newPiece("white family", green), "angel's ring (1/2)")
+	.setStyle(purple_p1.card, purple_p1.header, undefined, purple_p1.border);
+
 sets.addSet("cowering beetle (Death Strat)", new PieceSet("gorilla's hideout", newPiece("flying fish", blue)))
+	.addPieces(newPiece("huge black wall", purple), newPiece("dig in the area in front of a scorpion!", green))
 	.setStyle(blue_p1.card, blue_p1.header, undefined, blue_p1.border);
 sets.addSet("angry man (Death Strat)", new PieceSet("gorilla's hideout", newPiece("between four pillars", blue)))
+	.addPieces(newPiece("ghost protects the goddess", purple), newPiece("the only one who is looking down", blue))
 	.setStyle(blue_p1.card, blue_p1.header, undefined, blue_p1.border);
 sets.addSet("between the legs (Death Strat)", new PieceSet("burning mad", newPiece("between four pillars", blue)))
 	.setStyle(blue_p1.card, blue_p1.header, undefined, blue_p1.border);
 sets.addSet("four square pillars (Death Strat)", new PieceSet("gorilla's hideout", newPiece("flying fish", blue)))
 	.addPieces("huge bug", newPiece("flying fish", blue))
-	.addPieces("bugs don't like it", newPiece("the only one who is looking down", blue))
+	.addPieces(newPiece("bugs don't like it", green), newPiece("the only one who is looking down", blue))
+	.addPieces(newPiece("bug's baby", red), "dig in the area in front of a scorpion!")
 	.setStyle(blue_p1.card, blue_p1.header, undefined, blue_p1.border);
 sets.addSet("snakes (Death Strat)", new PieceSet("beauty and the beast", newPiece("flying fish", blue)))
 	.addPieces("bug's baby", newPiece("flying fish", blue))
@@ -208,6 +240,11 @@ sets.addSet("water bug (Death Strat)", new PieceSet("peek-a-boo eggman", newPiec
 	.setStyle(blue_p1.card, blue_p1.header, undefined, blue_p1.border);
 sets.addSet("white dot indicates blue (Death Strat)", new PieceSet("two gatekeepers", newPiece("between four pillars", blue)))
 	.addPieces("corner light", newPiece("between four pillars", blue))
+	.setStyle(blue_p1.card, blue_p1.header, undefined, blue_p1.border);
+sets.addSet("long vertical white line (Death Strat)", new PieceSet("two gatekeepers", newPiece("flying fish", blue)))
+	.addPieces(newPiece("huge bug", green), newPiece("the only one who is looking down", blue))
+	.addPieces(newPiece("beauty and the beast", red), "merry-go-round")
+	.addPieces("two containers", newPiece("connect the dots", green))
 	.setStyle(blue_p1.card, blue_p1.header, undefined, blue_p1.border);
 
 const bugs_food = new PieceSet("white family", newPiece("between four pillars", blue));

@@ -57,3 +57,10 @@ $theme-colors: map-merge($theme-colors, (
 		}
 	}
 }
+
+.nav-link-dark {
+	color: white !important;
+	&.active {
+		background-color: #22262b !important;
+	}
+}

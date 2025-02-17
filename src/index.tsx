@@ -63,7 +63,7 @@ const settings: Settings = {
 
 render(() => (
 	<Router base={constants.BASE_URL} root={props => setApp(props)}>
-		<Route path="/" component={Home} />
+		<Route path="/" component={() => <Home settings={settings} />} />
 		<Route path="/ph" component={() => <PumpkinHill search={search} settings={settings} ng={true} />} />
 		<Route path="/php" component={() => <PumpkinHill search={search} settings={settings} ng={false} />} />
 		<Route path="/am" component={() => <AquaticMine search={search} settings={settings} />} />

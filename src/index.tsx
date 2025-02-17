@@ -18,7 +18,6 @@ const root = document.getElementById('app');
 const [search, setSearch] = createSignal('');
 const [dark, setDark] = makePersisted(createSignal(false), { name: "dark-mode" });
 const [upperCaseAllWords, setUpperCaseAllWords] = makePersisted(createSignal(true), { name: "uc-words" });
-const [useOldSearch, setUseOldSearch] = makePersisted(createSignal(false), { name: "old-search" });
 const [splitBigSets, setSplitBigSets] = makePersisted(createSignal(true), { name: "split-sets" });
 const [disableConfirms, setDisableConfirms] = makePersisted(createSignal(false), { name: "disable-confirms" });
 
@@ -45,8 +44,6 @@ const setApp = (props: RouteSectionProps<unknown>) => {
 			setDark={setDark}
 			upperCaseAllWords={upperCaseAllWords}
 			setUpperCaseAllWords={setUpperCaseAllWords}
-			useOldSearch={useOldSearch}
-			setUseOldSearch={setUseOldSearch}
 			splitBigSets={splitBigSets}
 			setSplitBigSets={setSplitBigSets}
 			disableConfirms={disableConfirms}
@@ -60,7 +57,6 @@ const setApp = (props: RouteSectionProps<unknown>) => {
 const settings: Settings = {
 	dark: dark,
 	upperCaseAllWords: upperCaseAllWords,
-	useOldSearch: useOldSearch,
 	splitBigSets: splitBigSets,
 	disableConfirms: disableConfirms
 };

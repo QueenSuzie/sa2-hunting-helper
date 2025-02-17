@@ -21,17 +21,6 @@ const Sets: Component<{search: Accessor<string>, settings: Settings, sets: Piece
 			});
 	};
 
-	const includeSetOld = (term: string, value: string) => {
-		const words: string[] = term.split(" ");
-		for (const word of words) {
-			if (!value.includes(word)) {
-				return false;
-			}
-		}
-
-		return true;
-	};
-
 	const includeSet = (term: string, value: string, code: string|undefined) => {
 		term = term.trim().toLowerCase();
 		if (term == "") {
@@ -40,10 +29,6 @@ const Sets: Component<{search: Accessor<string>, settings: Settings, sets: Piece
 
 		if (code != null && term === code) {
 			return true;
-		}
-
-		if (props.settings.useOldSearch()) {
-			return includeSetOld(term, value);
 		}
 
 		const piece_words: string[] = value.split(" ");

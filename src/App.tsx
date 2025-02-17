@@ -18,8 +18,6 @@ const App: Component<{
 	setDark: Setter<boolean>,
 	upperCaseAllWords: Accessor<boolean>,
 	setUpperCaseAllWords: Setter<boolean>,
-	useOldSearch: Accessor<boolean>,
-	setUseOldSearch: Setter<boolean>,
 	splitBigSets: Accessor<boolean>,
 	setSplitBigSets: Setter<boolean>,
 	disableConfirms: Accessor<boolean>,
@@ -125,16 +123,6 @@ const App: Component<{
 										label="Uppercase All Words"
 										checked={props.upperCaseAllWords()}
 										onChange={() => props.setUpperCaseAllWords(!props.upperCaseAllWords())}
-									/>
-								</Form>
-							</NavDropdown.Item>
-							<NavDropdown.Item as="div">
-								<Form onSubmit={(e) => e.preventDefault()}>
-									<Form.Check
-										type="switch"
-										label="Use Old Search Method"
-										checked={props.useOldSearch()}
-										onChange={() => props.setUseOldSearch(!props.useOldSearch())}
 									/>
 								</Form>
 							</NavDropdown.Item>

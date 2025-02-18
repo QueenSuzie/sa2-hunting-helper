@@ -186,6 +186,12 @@ const Home: Component<{settings: Settings}> = (props) => {
 										you should search for bugs/roasted keys instead of your P1 and you will find sets specific to those pieces.
 										In those sets, your P1 will be on the left instead of your P2 as is the case with every other set.
 									</p>
+									<p>
+										Finally, some P1s in Death Chamber will have (Death Strat) in the P1 hint on the card.
+										These are blue P1s that you are going to want to death strat for no matter what. However,
+										before you die you should grab a hint, and if you get a listed P2, your P3 will be close enough
+										that it's worth grabbing the P3 before you die for your death strat.
+									</p>
 								</Tab>
 								<Tab tabClass={props.settings.dark() ? 'nav-link-dark' : 'text-dark'} eventKey="tips" title="Tips and Tricks">
 									<p>

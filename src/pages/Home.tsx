@@ -184,7 +184,7 @@ const Home: Component<{settings: Settings}> = (props) => {
 										This is that sometimes, you will spawn with Bugs on Patrol or Roasted Keys.
 										These usually lead to great sets, and if you get bugs or roasted keys, despite neither being a P1,
 										you should search for bugs/roasted keys instead of your P1 and you will find sets specific to those pieces.
-										In those sets, your P1 will be on the left instead of your P2 as is the case with every othere set.
+										In those sets, your P1 will be on the left instead of your P2 as is the case with every other set.
 									</p>
 								</Tab>
 								<Tab tabClass={props.settings.dark() ? 'nav-link-dark' : 'text-dark'} eventKey="tips" title="Tips and Tricks">

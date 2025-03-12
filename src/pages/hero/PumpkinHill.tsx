@@ -1,8 +1,8 @@
 import type { Accessor, Component } from 'solid-js';
-import { sets as ng } from '../data/stages/PumpkinHillNG';
-import { sets as ngp } from '../data/stages/PumpkinHill';
-import Sets from '../components/Sets';
-import Settings from '../data/Settings';
+import { sets as ng } from '../../data/stages/hero/PumpkinHillNG';
+import { sets as ngp } from '../../data/stages/hero/PumpkinHill';
+import Sets from '../../components/Sets';
+import Settings from '../../data/Settings';
 
 const PumpkinHill: Component<{search: Accessor<string>, ng: boolean, settings: Settings}> = (props) => {
 	return (

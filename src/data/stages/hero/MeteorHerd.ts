@@ -1,6 +1,6 @@
-import Code from "../Code";
-import PieceSet from "../PieceSet";
-import PieceSets from "../PieceSets";
+import Code from "../../Code";
+import PieceSet from "../../PieceSet";
+import PieceSets from "../../PieceSets";
 
 const sets: PieceSets = new PieceSets();
 sets.addSet("drilling tower", new PieceSet("a moon and a missile", "spinner containers"))

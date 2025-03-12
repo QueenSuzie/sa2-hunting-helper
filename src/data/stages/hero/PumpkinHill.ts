@@ -1,6 +1,6 @@
-import Code from "../Code";
-import PieceSet from "../PieceSet";
-import PieceSets from "../PieceSets";
+import Code from "../../Code";
+import PieceSet from "../../PieceSet";
+import PieceSets from "../../PieceSets";
 
 const step_back = "step back and wait";
 const terrible = "terrible! a skull buried in the rocky wall";

@@ -1,7 +1,7 @@
 import type { Accessor, Component } from 'solid-js';
-import { sets } from '../data/stages/DeathChamber';
-import Settings from '../data/Settings';
-import Sets from '../components/Sets';
+import { sets } from '../../data/stages/hero/DeathChamber';
+import Settings from '../../data/Settings';
+import Sets from '../../components/Sets';
 
 const DeathChamber: Component<{search: Accessor<string>, settings: Settings}> = (props) => {
 	return (

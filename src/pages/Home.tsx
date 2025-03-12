@@ -101,34 +101,81 @@ const Home: Component<{settings: Settings}> = (props) => {
 										Next to the Settings, you will find the primary feature for finding sets: the search bar.
 										The search bar in this tool is designed to find your P1 hint as quickly as possible.
 										To that end, the search works by filtering by words contained in the hint and search by the starting characters
-										of a word. That is to say, if a hint were to be something like "Antidisestablishmentarianism"
-										(A really long word for the sake of the example!) you would not need to type out the entire word to find it. You would simply
-										start typing out the first few characters like "a" or "an" or "ant" or "anti" and it will start filtering out any P1
-										that does not have a word in it which begins with those letters you typed.
+										of a word, and I'll be going over the various features of the search functionality here.
 									</p>
-									<p>
-										To further clarify how the search works, let's say you have a hint like "It's About To Fall Off"
-										you don't need to search for the words in order. You can type something like "fall about to"
-										and it will filter out all of the other sets. Also, as established previously, you also don't need to
-										type out the whole words, so this could be further simplified to "fa ab t" and it will filter out every other P1.
-										In fact, the last "t" is not even necessary to get to "It's About to Fall Off" specifically. Simply "fa ab" will suffice.
-									</p>
-									<p>
-										Basically the key thing is to split up words with spaces in the search bar as well to search for each word in the hint.
-										The order of the words doesn't actually matter in the search bar as long as that word is in the hint.
-										Furthermore, if a word is repeated in one hint but not another, entering that word twice will get you only the P1
-										which contains the word twice.
-									</p>
-									<p>
-										A good example of this is in Meteor Herd. A lot of P1s have the word "Container" in the hint. However, only 2 have
-										the word "Container" twice. So if you type "con con" you will get only "A Container Within A Container" and
-										"Inside A Container Which Is Behind A Container" but not other P1s like "In The Floating Containers".
-									</p>
-									<p>
-										The main skill you want to develop while using this tool is coming up with the most efficient search terms that use the least
-										amount of characters to get the hint you are looking for while playing the game. Luckily Meteor Herd has plenty of down time
-										the require little inputs while gliding or falling from a spring/rocket where typing is easy.
-									</p>
+									<ul>
+										<li>
+											<strong>Word Length</strong><br />
+											You don't need to type out the entire word to find a hint. Let's look at a hypothetical example of a really long word:
+											<ul>
+												<li>
+													<strong>Antidisestablishmentarianism</strong><br />
+													This word is really long but you only would need to type the first couple of letters to find it.
+												</li>
+												<li>
+													By typing just "a" you will filter out any hint that doesn't have a word starting with the letter "a"
+												</li>
+												<li>
+													By typing "an" you will filter out any hint that doesn't have a word starting with "an"
+												</li>
+												<li>
+													Using this you would probably be fine to just type "ant" or "anti" to find this very long word.
+												</li>
+											</ul>
+										</li>
+										<li>
+											<strong>Word Order</strong><br />
+											You also don't need to search for words in the same order that they appear in a hint.
+											All that matters is that a word is in the hint at all. Let's look at an example:
+											<ul>
+												<li>
+													<strong>It's About To Fall Off</strong><br />
+													There are 5 unique words here but you can search for any of them and in any order.
+													<ul>
+														<li>
+															Starting with "fa" to find "fall" would be a good start.
+														</li>
+														<li>
+															You can further refine the search by then looking for "about" with "ab"
+														</li>
+														<li>
+															Your final search might look like "fa ab" and you would get this hint.
+															Note that looking for "it" is probably not a great idea since it's a very common
+															word that might be in many hints.
+														</li>
+														<li>
+															You can see how the order of the words doesn't matter. You just separate the words with
+															a space to make it search for the 2 words separately.
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<strong>Word Uniqueness</strong><br />
+											Some words might appear more than once in the same hint. So if you search for the same word twice
+											then you will only geet hints that contain that word twice or more times. Here's an example:
+											<ul>
+												<li>
+													<strong>Inside A Container Which Is Behind A Container</strong><br />
+													This hint has the word "Container" twice.
+												</li>
+												<li>
+													If you search for "con con" you will find this hint, while filtering out all of the hints
+													that only have the word "Container" once. Like <strong>In The Floating Containers.</strong>
+												</li>
+												<li>
+													<strong>A Container Within A Container</strong> is another hint that has the word "Container" twice so you
+													would also get this hint with the search term "con con." So further refinement might be necessary.
+												</li>
+											</ul>
+										</li>
+										<li>
+											The main skill you want to develop while using this tool is coming up with the most efficient search terms that use the least
+											amount of characters to get the hint you are looking for while playing the game. Luckily Meteor Herd has plenty of down time
+											the require little inputs while gliding or falling from a spring/rocket where typing is easy.
+										</li>
+									</ul>
 								</Tab>
 								<Tab tabClass={props.settings.dark() ? 'nav-link-dark' : 'text-dark'} eventKey="codes" title="Codes">
 									<p>
@@ -139,30 +186,101 @@ const Home: Component<{settings: Settings}> = (props) => {
 										of codes which, again, are only meant to simplify finding those hard to search for pieces.
 									</p>
 									<p>
-										Meteor Herd is again a great example for the intention of the codes feature. Meteor Herd in particular has 4 different
-										"The Ark's Huge Storage Area" P1s. So instead of typing some search term for ark's huge, you can simply type "a1" and you will
-										get the Close Container Ark's Huge.
+										Meteor Herd is again a great example for the intention of the codes feature. Meteor Herd in particular has 4
+										different <strong>The Ark's Huge Storage Area</strong> P1s. So instead of typing some search term for "ark's huge"
+										you can simply type "a1" and you will get the Close Container Ark's Huge.
 									</p>
 								</Tab>
 								<Tab tabClass={props.settings.dark() ? 'nav-link-dark' : 'text-dark'} eventKey="disambiguations" title="Disambiguations">
 									<p>
-										Currently, a feature unique to Pumpkin Hill are the Disambiguation icons that appear in some sets as shown: <Ambiguate floatRight={false} />
+										Currently, a feature unique to Pumpkin Hill is handling for ambiguous pieces like
+										<strong>
+											&nbsp;A Place Where You Can Hear The Horn&nbsp;
+										</strong>
+										We'll explore these features here.
 									</p>
-									<p>
-										When you see a set with this icon, it means that your P3 or P3 options are not confirmed but rather help you disambiguate
-										ambiguous pieces. For example, in Pumpkin Hill (not NG+) "Three Brothers' Tombstone" has "Horn (P)" for the P3 of "Pumpkin Family."
-										This does not mean that if you get Pumpkin Family, then your P3 will be Horn (P). It means that if you get Pumpkin Family,
-										THEN get "A Place Where You Can Hear The Horn" you will know that your P3 is the Pumpkin Horn piece and not the Church.
-									</p>
-									<p>
-										Another thing to note is that some sets will have a disambiguation icon at the top of the card with no P2 listed.
-										What this means is that if your P2 is not shown at all, and then you get one of the ambiguous pieces shown at the top, then
-										you can use this as your disambiguation for any P2 not shown.
-									</p>
-									<p>
-										Finally, you may find some P2s that have no P3 like with "Tells Time" in either NG or NG+. This is meant to tell you
-										that this Three Brothers' Tombstone is in GT so you don't need to worry about if it's a Church one.
-									</p>
+									<ul>
+										<li>
+											<strong>Disambiguation Icon</strong>&nbsp; <Ambiguate floatRight={false} />
+											<ul>
+												<li>
+													When you see this icon, it means that your P3 or P3 options are not confirmed but rather help you disambiguate
+													ambiguous pieces.
+												</li>
+												<li>
+													An example of this is in the New Game tab (not NG+) <strong>Three Brothers' Tombstone</strong>&nbsp;
+													has <strong>Horn (P)</strong> for the P3 of <strong>Pumpkin Family.</strong>
+													<ul>
+														<li>
+															This does not mean that if you get Pumpkin Family, then your P3 will be the Pumpkin Horn piece.
+														</li>
+														<li>
+															It means that if you get Pumpkin Family, THEN get <strong>A Place Where You Can Hear The Horn</strong>&nbsp;
+															as your P3 hint you will know that your P3 is the Pumpkin Horn piece and not the Church one.
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<strong>Empty P2 with Disambiguation Icon</strong>
+											<ul>
+												<li>
+													Some P1 cards will have the very first row have no hint for your P2 on the left along with a disambiguation icon.
+												</li>
+												<li>
+													When you see this it means that this is the disambiguation you should use for any P2 you get that is not listed.
+												</li>
+												<li>
+													If your P2 *IS* listed then you should ignore this row.
+												</li>
+											</ul>
+										</li>
+										<li>
+											<strong>Ambiguous P2</strong><br />
+											There are some Ambiguous P2s that you may get and there are some ways to eliminate the 50/50 for those too.
+											<ul>
+												<li>
+													<strong>Disambiguation in Parenthesis</strong><br />
+													Any ambiguous P2 that has something in parenthesis will be telling you
+													which of the possibilities it will be.
+													<ul>
+														<li>
+															An example of this on the New Game (NOT NG+) tab is <strong>Sad-Eyed Pumpkin (P)</strong>&nbsp;
+															for <strong>Tells Time</strong>
+															<ul>
+																<li>
+																	In this case, it's the pumpkin (or far) side Sad-Eyed pumpkin.
+																</li>
+															</ul>
+														</li>
+														<li>
+															Another example using the same tab is <strong>Sad-Eyed Pumpkin (7/11 GT)</strong>&nbsp;
+															for <strong>Very High Up</strong>
+															<ul>
+																<li>
+																	In this case, it's telling you that you have a 7/11 (64%) chance that it's the
+																	Ghost Train (near) side Sad-Eyed Pumpkin. So your best bet is to go to that side first.
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<strong>No P3 Shown</strong>
+													<ul>
+														<li>
+															If your P2 has no P3 shown, then this means that that row is purely for disambiguating your P2.
+														</li>
+														<li>
+															In this case, no information is being given for your P3, and you should therefore follow any
+															disambiguation from the first empty row if applicable.
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
 								</Tab>
 								<Tab tabClass={props.settings.dark() ? 'nav-link-dark' : 'text-dark'} eventKey="colors" title="Colors">
 									<p>
@@ -170,24 +288,42 @@ const Home: Component<{settings: Settings}> = (props) => {
 										I think these colors should be self explanatory, but either way:
 									</p>
 									<ul>
-										<li>Red: A red room piece, or so close to red room in machine's path that it's not worth using a different color</li>
-										<li>Blue: A blue room piece, or blue secret piece.</li>
-										<li>Green: A green room piece, or green secret.</li>
-										<li>Purple: Red-Blue Machine's path, or red-blue secret</li>
-										<li>Brown: Kind of unintuitive, but red + green = brown. Therefore, red-green machine's path.</li>
-										<li>Black: A core piece. (White if you are on Dark Theme)</li>
+										<li>
+											<span style="color: red;"><strong>Red:</strong></span>&nbsp;
+											A red room piece, or so close to red room in machine's path that it's not worth using a different color
+										</li>
+										<li>
+											<span style="color: blue;"><strong>Blue:</strong></span>&nbsp;
+											A blue room piece, or blue secret piece.
+										</li>
+										<li>
+											<span style="color: green;"><strong>Green:</strong></span>&nbsp;
+											A green room piece, or green secret.
+										</li>
+										<li>
+											<span style="color: purple;"><strong>Purple:</strong></span>&nbsp;
+											Red-Blue Machine's path, or red-blue secret.
+										</li>
+										<li>
+											<span style="color: #804000;"><strong>Brown:</strong></span>&nbsp;
+											Kind of unintuitive, but red + green = brown. Therefore, red-green machine's path.
+										</li>
+										<li>
+											<strong>Black:</strong>&nbsp;
+											A core piece. (White if you are on Dark Theme)
+										</li>
 									</ul>
 								</Tab>
 								<Tab tabClass={props.settings.dark() ? 'nav-link-dark' : 'text-dark'} eventKey="dc" title="Death Chamber">
 									<p>
 										Death Chamber has another unique quirk to it that is not present in the other stages.
-										This is that sometimes, you will spawn with Bugs on Patrol or Roasted Keys.
-										These usually lead to great sets, and if you get bugs or roasted keys, despite neither being a P1,
+										This is that sometimes, you will spawn with <strong>Bugs on Patrol</strong> or <strong>Roasted Keys.</strong>
+										&nbsp;These usually lead to great sets, and if you get bugs or roasted keys, despite neither being a P1,
 										you should search for bugs/roasted keys instead of your P1 and you will find sets specific to those pieces.
 										In those sets, your P1 will be on the left instead of your P2 as is the case with every other set.
 									</p>
 									<p>
-										Finally, some P1s in Death Chamber will have (Death Strat) in the P1 hint on the card.
+										Finally, some P1s in Death Chamber will have <strong>(Death Strat)</strong> in the P1 hint on the card.
 										These are blue P1s that you are going to want to death strat for no matter what. However,
 										before you die you should grab a hint, and if you get a listed P2, your P3 will be close enough
 										that it's worth grabbing the P3 before you die for your death strat.

@@ -1,6 +1,6 @@
-import Code from "../Code";
-import PieceSet from "../PieceSet";
-import PieceSets from "../PieceSets";
+import Code from "../../Code";
+import PieceSet from "../../PieceSet";
+import PieceSets from "../../PieceSets";
 
 const sets: PieceSets = new PieceSets();
 sets.addSet("mine cart dumping area", new PieceSet("on the tracks of a broken mine cart (top)", ["under the flattened ground", "chase the skull"]))

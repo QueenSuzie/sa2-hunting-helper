@@ -1,7 +1,7 @@
-import Code from "../Code";
-import { Piece } from "../Pieces";
-import PieceSet from "../PieceSet";
-import PieceSets from "../PieceSets";
+import Code from "../../Code";
+import { Piece } from "../../Pieces";
+import PieceSet from "../../PieceSet";
+import PieceSets from "../../PieceSets";
 
 const purple = "purple";
 const red = "red";

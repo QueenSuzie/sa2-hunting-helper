@@ -1,6 +1,6 @@
-import Code from "../Code";
-import PieceSet from "../PieceSet";
-import PieceSets from "../PieceSets";
+import Code from "../../Code";
+import PieceSet from "../../PieceSet";
+import PieceSets from "../../PieceSets";
 
 const sets: PieceSets = new PieceSets();
 sets.addSet("shady place", new PieceSet({ piece: "", isDisambiguation: true }, ["horn (P)", "something bad (GT)"]))

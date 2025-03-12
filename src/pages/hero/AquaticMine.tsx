@@ -1,8 +1,8 @@
 import type { Accessor, Component } from 'solid-js';
-import { sets } from '../data/stages/AquaticMine';
+import { sets } from '../../data/stages/hero/AquaticMine';
 import { Card, Col, Row } from 'solid-bootstrap';
-import Settings from '../data/Settings';
-import Sets from '../components/Sets';
+import Settings from '../../data/Settings';
+import Sets from '../../components/Sets';
 
 const AquaticMine: Component<{search: Accessor<string>, settings: Settings}> = (props) => {
 	return (

@@ -28,6 +28,8 @@ const App: Component<{
 	setSplitBigSets: Setter<boolean>,
 	disableConfirms: Accessor<boolean>,
 	setDisableConfirms: Setter<boolean>,
+	storyToggleInNav: Accessor<boolean>,
+	setStoryToggleInNav: Setter<boolean>,
 	story: Accessor<Story>,
 	setStory: Setter<Story>
 }> = (props) => {
@@ -60,6 +62,14 @@ const App: Component<{
 		);
 	};
 
+	const storyToggleLink = () => {
+		return (
+			<Nav.Item classList={{ "nav-link": true }} style={{ cursor: "pointer" }} onClick={() => props.setStory(props.story() === Story.HERO ? Story.DARK : Story.HERO)}>
+				{props.story() === Story.HERO ? "Dark" : "Hero"} Story
+			</Nav.Item>
+		);
+	};
+
 	return (
 		<>
 			<Navbar bg={props.dark() ? "black" : "secondary-subtle"} variant={props.dark() ? "dark" : "light"} expand="lg">
@@ -72,24 +82,36 @@ const App: Component<{
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav class="me-auto">
 							<Nav.Link href={constants.BASE_URL} active={locationIs("home") || locationIs("")}>Home</Nav.Link>
-							<Nav.Item classList={{ "nav-link": true }} style={{ cursor: "pointer" }} onClick={() => props.setStory(props.story() === Story.HERO ? Story.DARK : Story.HERO)}>
-								{props.story() === Story.HERO ? "Dark" : "Hero"} Story
-							</Nav.Item>
+							<Show when={props.storyToggleInNav()}>
+								{ storyToggleLink() }
+							</Show>
 							<Show when={props.story() === Story.HERO}>
-								<NavDropdown title="Pumpkin Hill" menuVariant={props.dark() ? "dark" : "light"} active={locationIs("ph") || locationIs("php")} autoClose="inside">
-									<NavDropdown.Item href={`${constants.BASE_URL}/ph`} active={locationIs("ph")}>NG</NavDropdown.Item>
-									<NavDropdown.Item href={`${constants.BASE_URL}/php`} active={locationIs("php")}>NG+</NavDropdown.Item>
-								</NavDropdown>
+								<Show when={props.storyToggleInNav()}>
+									<NavDropdown title="Pumpkin Hill" menuVariant={props.dark() ? "dark" : "light"} active={locationIs("ph") || locationIs("php")} autoClose="inside">
+										<NavDropdown.Item href={`${constants.BASE_URL}/ph`} active={locationIs("ph")}>NG</NavDropdown.Item>
+										<NavDropdown.Item href={`${constants.BASE_URL}/php`} active={locationIs("php")}>NG+</NavDropdown.Item>
+									</NavDropdown>
+								</Show>
+								<Show when={!props.storyToggleInNav()}>
+									<Nav.Link href={`${constants.BASE_URL}/ph`} active={locationIs("ph")}>Pumpkin Hill</Nav.Link>
+									<Nav.Link href={`${constants.BASE_URL}/php`} active={locationIs("php")}>Pumpkin Hill NG+</Nav.Link>
+								</Show>
 								<Nav.Link href={`${constants.BASE_URL}/am`} active={locationIs("am")}>Aquatic Mine</Nav.Link>
 								<Nav.Link href={`${constants.BASE_URL}/dc`} active={locationIs("dc")}>Death Chamber</Nav.Link>
 								<Nav.Link href={`${constants.BASE_URL}/mh`} active={locationIs("mh")}>Meteor Herd</Nav.Link>
 							</Show>
 							<Show when={props.story() === Story.DARK}>
 								<Nav.Link href={`${constants.BASE_URL}/dl`} active={locationIs("dl")}>Dry Lagoon</Nav.Link>
-								<NavDropdown title="Egg Quarters" menuVariant={props.dark() ? "dark" : "light"} active={locationIs("eq") || locationIs("eqp")} autoClose="inside">
-									<NavDropdown.Item href={`${constants.BASE_URL}/eq`} active={locationIs("eq")}>NG</NavDropdown.Item>
-									<NavDropdown.Item href={`${constants.BASE_URL}/eqp`} active={locationIs("eqp")}>NG+</NavDropdown.Item>
-								</NavDropdown>
+								<Show when={props.storyToggleInNav()}>
+									<NavDropdown title="Egg Quarters" menuVariant={props.dark() ? "dark" : "light"} active={locationIs("eq") || locationIs("eqp")} autoClose="inside">
+										<NavDropdown.Item href={`${constants.BASE_URL}/eq`} active={locationIs("eq")}>NG</NavDropdown.Item>
+										<NavDropdown.Item href={`${constants.BASE_URL}/eqp`} active={locationIs("eqp")}>NG+</NavDropdown.Item>
+									</NavDropdown>
+								</Show>
+								<Show when={!props.storyToggleInNav()}>
+									<Nav.Link href={`${constants.BASE_URL}/eq`} active={locationIs("eq")}>Egg Quarters</Nav.Link>
+									<Nav.Link href={`${constants.BASE_URL}/eqp`} active={locationIs("eqp")}>Egg Quarters NG+</Nav.Link>
+								</Show>
 								<Nav.Link href={`${constants.BASE_URL}/sh`} active={locationIs("sh")}>Security Hall</Nav.Link>
 								<Nav.Link href={`${constants.BASE_URL}/ms`} active={locationIs("ms")}>Mad Space</Nav.Link>
 							</Show>
@@ -193,6 +215,30 @@ const App: Component<{
 										checked={props.disableConfirms()}
 										onChange={() => props.setDisableConfirms(!props.disableConfirms())}
 									/>
+								</Form>
+							</NavDropdown.Item>
+							<NavDropdown.Item as="div">
+								<Form onSubmit={(e) => e.preventDefault()}>
+									<Form.Check
+										type="switch"
+										label="Show Story Toggle in Navbar"
+										checked={props.storyToggleInNav()}
+										onChange={() => props.setStoryToggleInNav(!props.storyToggleInNav())}
+									/>
+								</Form>
+							</NavDropdown.Item>
+							<NavDropdown.Item as="div">
+								<Form onSubmit={(e) => e.preventDefault()}>
+									<Form.Group class="d-flex align-items-center lh-1">
+										<div class="me-2">Dark Story</div>
+										<Form.Check
+											type="switch"
+											class="mx-2"
+											checked={props.story() === Story.HERO}
+											onChange={() => props.setStory(props.story() === Story.HERO ? Story.DARK : Story.HERO)}
+										/>
+										<div class="ms-2">Hero Story</div>
+									</Form.Group>
 								</Form>
 							</NavDropdown.Item>
 						</NavDropdown>

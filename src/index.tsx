@@ -24,6 +24,7 @@ const [dark, setDark] = makePersisted(createSignal(false), { name: "dark-mode" }
 const [upperCaseAllWords, setUpperCaseAllWords] = makePersisted(createSignal(true), { name: "uc-words" });
 const [splitBigSets, setSplitBigSets] = makePersisted(createSignal(true), { name: "split-sets" });
 const [disableConfirms, setDisableConfirms] = makePersisted(createSignal(false), { name: "disable-confirms" });
+const [storyToggleInNav, setStoryToggleInNav] = makePersisted(createSignal(false), { name: "storyToggleInNav" });
 const [story, setStory] = makePersisted(createSignal(Story.HERO), { name: "story" });
 
 if (root != null && root.parentElement != null) {
@@ -53,6 +54,8 @@ const setApp = (props: RouteSectionProps<unknown>) => {
 			setSplitBigSets={setSplitBigSets}
 			disableConfirms={disableConfirms}
 			setDisableConfirms={setDisableConfirms}
+			storyToggleInNav={storyToggleInNav}
+			setStoryToggleInNav={setStoryToggleInNav}
 			story={story}
 			setStory={setStory}
 		>

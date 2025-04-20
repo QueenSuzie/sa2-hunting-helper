@@ -72,7 +72,7 @@ const Home: Component<{settings: Settings}> = (props) => {
 												</li>
 												<li>
 													In the on example, you can see how this is really 3 piece 3 options for 1 piece 2 of "A Star Between Three Arches"
-													however it is split into 2 rows to make it easier to read. This is purely preference based and I personally don't use it.
+													however it is split into 2 rows to potentially make it easier to read. This is purely preference based and I personally don't use it.
 												</li>
 											</ul>
 										</li>

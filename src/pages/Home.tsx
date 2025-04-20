@@ -94,6 +94,25 @@ const Home: Component<{settings: Settings}> = (props) => {
 												</li>
 											</ul>
 										</li>
+										<li>
+											<strong>Show Story Toggle in Navbar</strong>
+											<ul>
+												<li>
+													Displays an optional link in the navbar for quick/easy switching between Hero and Dark story links.
+												</li>
+												<li>
+													Regardless of whether this is enabled, you will be able to toggle stories from the Story Toggle setting.
+												</li>
+											</ul>
+										</li>
+										<li>
+											<strong>Dark/Hero Story Toggle</strong>
+											<ul>
+												<li>
+													Toggles the navbar links between Hero and Dark story stages.
+												</li>
+											</ul>
+										</li>
 									</ul>
 								</Tab>
 								<Tab tabClass={props.settings.dark() ? 'nav-link-dark' : 'text-dark'} eventKey="search" title="Search">
